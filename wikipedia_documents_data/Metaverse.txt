@@ -1,0 +1,92 @@
+The metaverse is a loosely defined term referring to virtual worlds in which users represented by avatars interact, usually in 3D and focused on social and economic connection. 
+The term metaverse originated in the 1992 science fiction novel Snow Crash as a portmanteau of "meta" and "universe". In Snow Crash, the metaverse is envisioned as a version of the Internet that is a single, universal, and immersive virtual world, facilitated by the use of virtual reality (VR) and augmented reality (AR) headsets. 
+The term "metaverse" is often linked to virtual reality technology, and beginning in the early 2020s, with Web3. The term has been used as a buzzword by companies to exaggerate the development progress of various related technologies and projects for public relations purposes. Information privacy, user addiction, and user safety are concerns within the metaverse, stemming from challenges facing the social media and video game industries as a whole.
+
+
+== Implementations ==
+
+Components of metaverse technology have already been developed within online video games. The 2003 virtual world platform Second Life is often described as the first metaverse, as it incorporated many aspects of social media into a persistent three-dimensional world with the user represented as an avatar, but historical claims of metaverse development started soon after the term was coined. Early projects included Active Worlds and The Palace.
+Popular games described as part of the metaverse include Habbo Hotel, World of Warcraft, Minecraft, Fortnite, VRChat, and game creation platform Roblox In a January 2022 interview with Wired, Second Life creator Philip Rosedale described metaverses as a three-dimensional Internet that is populated with live people. Social interaction and 3D virtual worlds are often an integral feature in many massively multiplayer online games.
+In 2017, Microsoft acquired the VR company AltspaceVR, and has since implemented virtual avatars and meetings held in virtual reality into Microsoft Teams.
+In 2019, the social network company Facebook launched a social VR world called Facebook Horizon. In 2021, the company was renamed "Meta Platforms" and its chairman Mark Zuckerberg declared a company commitment to developing a metaverse. Many of the virtual reality technologies advertised by Meta Platforms remain to be developed. Facebook whistleblower Frances Haugen criticised the move, adding that Meta Platforms' continued focus on growth-oriented projects is largely done to the detriment of ensuring safety on their platforms. Meta Platforms has also faced user safety criticism regarding Horizon Worlds due to sexual harassment occurring on the platform. In 2021, Meta made a loss of over $10 billion on its metaverse development department, with Mark Zuckerberg saying he expected operating losses to "increase meaningfully" in 2022. In February 2023, Zuckerberg wrote a Facebook post announcing the company's pivot away from the metaverse to focus on AI. 
+Some metaverse implementations rely on digital currencies, and often cryptocurrency. Assets within the metaverse are sometimes traded as non-fungible tokens (NFTs) and track ownership using blockchain technology.
+Proposed applications for metaverse technology include improving work productivity, interactive learning environments, e-commerce, mass-audience interaction, healthcare and real estate.
+
+
+== Technology ==
+
+
+=== Hardware ===
+Access points for the metaverse includes general-purpose computers and smartphones, augmented reality, mixed reality, and virtual reality.
+Dependence on VR technology has limited metaverse development and wide-scale adoption. Limitations of portable hardware and the need to balance cost and design have caused a lack of high-quality graphics and mobility. Lightweight wireless headsets have struggled to achieve retina display pixel density needed for visual immersion. Another issue for wide-scale adoption of the technology is cost, with consumer VR headsets ranging in price from $300 to $3500 as of 2022.
+Current hardware development is focused on overcoming limitations of VR headsets, glasses, sensors, and increasing immersion with haptic technology.
+
+
+=== Software ===
+There has been no wide-scale adoption of a standardized technical specification for metaverse implementations, and existing implementations rely primarily on proprietary technology. Interoperability is a major concern in metaverse development, stemming from concerns about transparency and privacy. There have been several virtual environment standardization projects.
+Universal Scene Description is a specification for 3D computer graphics interchange created by Pixar and supported by Blender, Apple's SceneKit and Autodesk 3ds Max. The technology company NVIDIA announced in 2021 they would adopt USD for their metaverse development tools.
+glTF is a specification for the efficient transmission and loading of 3D scenes and models by engines and applications created by the Khronos Group, an industry consortium developing royalty free open standards. In August 2022 it was announced that glTF 2.0 had been released as the ISO/IEC 12113:2022 International Standard.
+OpenXR is an open standard for access to virtual and augmented reality devices and experiences. It has been adopted by Microsoft for HoloLens 2, Meta Platforms for the Oculus Quest, HTC for the HTC Vive, Qualcomm for the Snapdragon Spaces XR Developer Platform, and Valve for SteamVR.
+
+
+== Criticism and concerns ==
+
+
+=== Feasibility ===
+In a February 2022 article for The New York Times, Lauren Jackson argued that the metaverse is "stalled from achieving scale by a lack of infrastructure for both hardware and software, a monopolistic approach to platform development, and a lack of clear governance standards."
+In December 2021, Raja Koduri, senior vice president of Intel, claimed that "Truly persistent and immersive computing, at scale and accessible by billions of humans in real time, will require even more: a 1,000-times increase in computational efficiency from today's state of the art."
+In an article for The New York Times on October 26, 2022, Ryan Mac, a technology reporter, claimed that for the past year, Mark Zuckerberg has struggled to find the best way to achieve the metaverse. He has yet to succeed.
+
+
+=== Privacy ===
+Information privacy is an area of concern for the metaverse because related companies will likely collect users' personal information through interactions and biometric data from wearable virtual and augmented reality devices. Meta Platforms (previously Facebook) is planning on employing targeted advertising within their metaverse, raising further worries related to the spread of misinformation and loss of personal privacy. In 2021, David Reid of Liverpool Hope University argued the amount of data collection in the metaverse would be greater than that on the internet stating "If you think about the amount of data a company could collect on the World Wide Web right now, compared to what it could collect with the metaverse, there is just no comparison." In fact, the current metaverse technology is very immature. Abdulsattar Jaber, a professor at Iraq's Middle Technical University, found that the new technology used by the metaverse may cause many problems related to the security and privacy of system users.
+
+
+=== User safety ===
+User addiction and problematic social media use is another concern. Internet addiction disorder, social media, and video game addiction can have mental and physical repercussions over a prolonged period of time, such as depression, anxiety, and various other harms related to having a sedentary lifestyle such as an increased risk for obesity and cardiovascular disease. Experts are also concerned that the metaverse could be used as an 'escape' from reality in a similar fashion to existing internet technologies.
+Virtual crimes  like sex abuse, child grooming, and harassment are significant challenges within existing virtual reality social platforms, and may be similarly prevalent in the metaverse. In February 2022, investigations by BBC News and The Washington Post found minors engaging in adult activities in applications such as VRChat and Horizon Worlds despite an age requirement of 13 years or older.
+In an October 2022 interview, Roblox Chief Scientist Morgan McGuire stated that it is "a challenge to moderate 3D", and also compared moderating Roblox to shutting down speakeasies.
+
+
+=== Regulation ===
+With the emergence of the metaverse, many are calling for new regulations to protect users when they interact in the virtual world and to ensure that intellectual property (IP) laws are extended to both physical and virtual objects, respecting the rights of inventors, designers, and owners of trademarks, just as they would in the real world.
+
+
+=== Social issues ===
+Metaverse development may magnify the social impacts of online echo chambers and digitally alienating spaces or abuse common social media engagement strategies to manipulate users with biased content. Keza MacDonald of The Guardian criticized the utopianism of technology companies who claim that a metaverse could be a reprieve from worker exploitation, prejudice, and discrimination. MacDonald stated that they would be more positive towards metaverse development if it was not dominated by "companies and disaster capitalists trying to figure out a way to make more money as the real world's resources are dwindling." Marketing professor Andreas Kaplan, citing their experience studying Second Life users, argues that the metaverse may have a generally negative societal impact due to their strongly addictive potential. People with physical disabilities like deafness or blindness are disadvantaged without technologies addressed to accessibility.
+
+
+=== Lack of adoption ===
+As of 2023, there has been little adoption of Metaverse technology, with Decentraland, a platform claiming to be the metaverse, reporting that it had 8,000 daily users or fewer. Ed Zitron of Business Insider and Marc Olinga of The Street declared the Metaverse a fad that was "dead", having been displaced by artificial intelligence as the current hot new trend in computing.
+
+
+== Fiction ==
+
+
+=== Snow Crash, 1992 ===
+
+The term metaverse was coined by Neal Stephenson in his 1992 science fiction novel Snow Crash, where humans, represented by computer-generated avatars, interact with each other and software agents, in a three-dimensional virtual space that uses the metaphor of the real world. Stephenson used the term to describe a virtual-reality-based successor to the internet.
+Neal Stephenson's metaverse appears to its users as an urban environment developed along a 100-meter-wide road, called the Street, which spans the entire 65,536 km (216 km) circumference of a featureless, black, perfectly spherical planet. The virtual real estate is owned by the Global Multimedia Protocol Group, a fictional part of the real Association for Computing Machinery, and is available to be bought and buildings developed thereupon.
+Users of the metaverse access it through personal terminals that project a high-quality virtual reality display onto goggles worn by the user, or from grainy black and white public terminals in booths. The users experience it from a first-person perspective. Stephenson describes a sub-culture of people choosing to remain continuously connected to the metaverse; they are given the sobriquet "gargoyles" due to their grotesque appearance.
+Within the metaverse, individual users appear as avatars of any form, with the sole restriction of height, "to prevent people from walking around a mile high". Transport within the metaverse is limited to analogs of reality by foot or vehicle, such as the monorail that runs the entire length of the Street, stopping at 256 Express Ports, located evenly at 256 km intervals, and Local Ports, one kilometer apart.
+
+
+=== Ready Player One, 2011 ===
+Ready Player One is a dystopian science fiction franchise created by Ernest Cline which depicts a shared VR landscape called "The OASIS". The first novel was released in 2011, with a 2018 film adaptation, and second novel in 2020. The franchise depicts the year 2045 as being gripped by an energy crisis and global warming, causing widespread social problems and economic stagnation. The primary escape for people is a shared VR landscape called "the OASIS" which is accessed with a VR headset and wired gloves. The OASIS functions both as a massively multiplayer online role-playing game and as a virtual society.
+
+
+== See also ==
+
+Closed platform
+Cyberspace
+Multiverse (video games)
+Massively multiplayer online role-playing game
+Supranet
+Spatial computing
+
+
+== References ==
+
+
+== Further reading ==
+The Metaverse: Concepts and Issues for Congress (PDF) (Report). Congressional Research Service. August 26, 2022.

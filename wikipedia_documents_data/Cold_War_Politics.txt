@@ -1,0 +1,117 @@
+Cold is the presence of low temperature, especially in the atmosphere. In common usage, cold is often a subjective perception. A lower bound to temperature is absolute zero, defined as 0.00 K on the Kelvin scale, an absolute thermodynamic temperature scale. This corresponds to −273.15 °C on the Celsius scale, −459.67 °F on the Fahrenheit scale, and 0.00 °R on the Rankine scale.
+Since temperature relates to the thermal energy held by an object or a sample of matter, which is the kinetic energy of the random motion of the particle constituents of matter, an object will have less thermal energy when it is colder and more when it is hotter. If it were possible to cool a system to absolute zero, all motion of the particles in a sample of matter would cease and they would be at complete rest in the classical sense. The object could be described as having zero thermal energy. Microscopically in the description of quantum mechanics, however, matter still has zero-point energy even at absolute zero, because of the uncertainty principle.
+
+
+== Cooling ==
+
+Cooling refers to the process of becoming cold, or lowering in temperature. This could be accomplished   by removing heat from a system, or exposing the system to an environment with a lower temperature.
+Coolants are fluids used to cool objects, prevent freezing and prevent erosion in machines.
+Air cooling is the process of cooling an object by exposing it to air. This will only work if the air is at a lower  temperature than the object, and the process can be enhanced by increasing the surface area, increasing the coolant flow rate, or decreasing the mass of the object.
+Another common method of cooling is exposing an object to ice, dry ice, or liquid nitrogen. This works by  conduction; the heat is transferred from the relatively warm object to the relatively cold coolant.
+Laser cooling and magnetic evaporative cooling are techniques used to reach very low temperatures.
+
+
+== History ==
+
+
+=== Early history ===
+In ancient times, ice was not adopted for food preservation but used to cool wine which the Romans had  also done. According to Pliny, Emperor Nero invented the ice bucket to chill wines instead of adding it to  wine to make it cold as it would dilute it.
+Some time around 1700 BC Zimri-Lim, king of Mari Kingdom in northwest Iraq had created an "icehouse"  called bit shurpin at a location close to his capital city on the banks of the Euphrates. In the 7th century BC the Chinese had used icehouses to preserve vegetables and fruits. During the Tang dynastic rule in China (618–907 AD) a document refers to the practice of using ice that was in vogue during the Eastern Chou Dynasty (770–256 BC) by 94 workmen employed for "Ice-Service" to freeze everything from wine to dead bodies.
+Shachtman says that in the 4th century AD, the brother of the Japanese emperor Nintoku gave him a gift of ice from a mountain. The Emperor was so happy with the gift that he named the first of June as the "Day of Ice" and ceremoniously gave blocks of ice to his officials.
+Even in ancient times, Shachtman says, in Egypt and India, night cooling by evaporation of water and heat radiation, and the ability of salts to lower the freezing temperature of water was practiced. The ancient people of Rome and Greece were aware that boiled water cooled quicker than the ordinary water; the reason for this is that with boiling of water carbon dioxide and other gases, which are deterrents to cooling, are removed; but this fact was not known till the 17th century.
+
+
+=== From the 17th century ===
+Shachtman says that King James VI and I supported the work of Cornelis Drebbel as a magician to perform tricks such as producing thunder, lightning, lions, birds, trembling leaves and so forth. In 1620 he gave a demonstration in Westminster Abbey to the king and his courtiers on the power of cold. On a summer day, Shachtman says, Drebbel had created a chill (lowered the temperature by several degrees) in the hall of the Abbey, which made the king shiver and run out of the hall with his entourage. This was an incredible spectacle, says Shachtman. Several years before, Giambattista della Porta had demonstrated at the Abbey "ice fantasy gardens, intricate ice sculptures" and also iced drinks for banquets in Florence. The only reference to the artificial freezing created by Drebbel was by Francis Bacon. His demonstration was not taken seriously as it was considered one of his magic tricks, as there was no practical application then. Drebbel had not revealed his secrets.
+Shachtman says that Lord Chancellor Bacon, an advocate of experimental science, had tried in Novum Organum, published in the late 1620s, to explain the artificial freezing experiment at Westminster Abbey, though he was not present during the demonstration, as "Nitre (or rather its spirit) is very cold, and hence nitre or salt when added to snow or ice intensifies the cold of the latter, the nitre by adding to its own cold, but the salt by supplying activity to the cold snow." This explanation on the cold inducing aspects of nitre and salt was tried then by many scientists.
+Shachtman says it was the lack of scientific knowledge in physics and chemistry that had held back progress in the beneficial use of ice until a drastic change in religious opinions in the 17th century. The intellectual barrier was broken by Francis Bacon and Robert Boyle who followed him in this quest for knowledge of cold. Boyle did extensive experimentation during the 17th century in the discipline of cold, and his research on pressure and volume was the forerunner of research in the field of cold during the 19th century. He explained his approach as "Bacon's identification of heat and cold as the right and left hands of nature". Boyle also refuted some of the theories mooted by Aristotle on cold by experimenting on transmission of cold from one material to the other. He proved that water was not the only source of cold but gold, silver and crystal, which had no water content, could also change to severe cold condition.
+
+
+=== 19th century ===
+
+In the United States from about 1850 till end of 19th century export of ice was second only to cotton. The first ice box was developed by Thomas Moore, a farmer from Maryland in 1810 to carry butter in an oval shaped wooden tub. The tub was provided with a metal lining in its interior and surrounded by a packing of ice. A rabbit skin was used as insulation. Moore also developed an ice box for domestic use with the container built over a space of 6 cubic feet (0.17 m3) which was filled with ice. In 1825, ice harvesting by use of a horse drawn ice cutting device was invented by Nathaniel J. Wyeth. The cut blocks of uniform size ice was a cheap method of food preservation widely practiced in the United States. Also developed in 1855 was a steam powered device to haul 600 tons of ice per hour. More innovations ensued. Devices using compressed air as a refrigerants were invented.
+
+
+=== 20th century ===
+Iceboxes were in widespread use from the mid-19th century to the 1930s, when the refrigerator was introduced into the home. Most municipally consumed ice was harvested in winter from snow-packed areas or frozen lakes, stored in ice houses, and delivered domestically as iceboxes became more common.
+In 1913, refrigerators for home use were invented. In 1923 Frigidaire introduced the first self-contained unit. The introduction of Freon in the 1920s expanded the refrigerator market during the 1930s. Home freezers as separate compartments (larger than necessary just for ice cubes) were introduced in 1940. Frozen foods, previously a luxury item, became commonplace.
+
+
+== Physiological effects ==
+Cold has numerous physiological and pathological effects on the human body, as well as on other organisms. Cold environments may promote certain psychological traits, as well as having direct effects on the ability to move. Shivering is one of the first physiological responses to cold. Even at low temperatures, the cold can massively disrupt blood circulation. Extracellular water freezes and tissue is destroyed. It affects fingers, toes, nose, ears and cheeks particularly often. They discolor, swell, blister, and bleed. The so-called frostnip leads to local frostbite or even to the death of entire body parts. Only temporary cold reactions of the skin are without consequences. As blood vessels contract, they become cool and pale, with less oxygen getting into the tissue. Warmth stimulates blood circulation again and is painful but harmless. Comprehensive protection against the cold is particularly important for children and for sports. Extreme cold temperatures may lead to frostbite, sepsis, and hypothermia, which in turn may result in death.
+
+
+=== Common myths ===
+A common, but false, statement states that cold weather itself can induce the identically named common cold. No scientific evidence of this has been found, although the disease, alongside influenza and others, does increase in prevalence with colder weather.
+
+
+== Notable cold locations and objects ==
+
+The National Institute of Standards and Technology in Boulder, Colorado using a new technique, managed to chill a microscopic mechanical drum to 360 microkelvins, making it the coldest object on record. Theoretically, using this technique, an object could be cooled to absolute zero.
+The coldest known temperature ever achieved is a state of matter called the Bose–Einstein condensate which was first theorized to exist by Satyendra Nath Bose in 1924 and first created by Eric Cornell, Carl Wieman, and co-workers at JILA on 5 June 1995. They did this by cooling a dilute vapor consisting of approximately two thousand rubidium-87 atoms to below 170 nK (one nK or nanokelvin is a billionth (10−9) of a kelvin) using a combination of laser cooling (a technique that won its inventors Steven Chu, Claude Cohen-Tannoudji, and William D. Phillips the 1997 Nobel Prize in Physics) and magnetic evaporative cooling.
+90377 Sedna is one of the coldest known objects within the Solar System. Orbiting at an average distance of 84 billion miles, Sedna has an average surface temperature of -400°F (-240°C).
+The lunar crater Hermite was described after a 2009 survey by NASA's Lunar Reconnaissance Orbiter as the "coldest known place in the Solar System", with temperatures at 26 kelvins (−413 °F, −247 °C).
+The Boomerang Nebula is the coldest known natural location in the universe, with a temperature that is estimated at 1 K (−272.15 °C, −457.87 °F).
+The Dwarf Planet Haumea is one of the coldest known objects in our solar system. With a Temperature of -401 degrees Fahrenheit or -241 degrees Celsius
+The Planck spacecraft's instruments are kept at 0.1 K (−273.05 °C, −459.49 °F) via passive and active cooling.
+Absent any other source of heat, the temperature of the Universe is roughly 2.725 kelvins, due to the Cosmic microwave background radiation, a remnant of the Big Bang.
+Neptune's moon Triton has a surface temperature of 38.15 K (−235 °C, −391 °F)
+Uranus with a black-body temperature of 58.2 K (−215.0 °C, −354.9 °F).
+Saturn with a black-body temperature of 81.1 K (−192.0 °C, −313.7 °F).
+Mercury, despite being close to the Sun, is actually cold during its night, with a temperature of about 93.15 K (−180 °C, −290 °F). Mercury is cold during its night because it has no atmosphere to trap in heat from the Sun.
+Jupiter with a black-body temperature of 110.0 K (−163.2 °C, −261.67 °F).
+Mars with a black-body temperature of 210.1 K (−63.05 °C, −81.49 °F).
+The coldest continent on Earth is Antarctica. The coldest place on Earth is the Antarctic Plateau, an area of Antarctica around the South Pole that has an altitude of around 3,000 metres (9,800 ft). The lowest reliably measured temperature on Earth of 183.9 K (−89.2 °C, −128.6 °F) was recorded there at Vostok Station on 21 July 1983. The Poles of Cold are the places in the Southern and Northern Hemispheres where the lowest air temperatures have been recorded. (See List of weather records).
+The cold deserts of the North Pole, known as the tundra region, experiences an annual snow fall of a few inches and temperatures recorded are as low as 203.15 K (−70 °C, −94 °F). Only a few small plants survive in the generally frozen ground (thaws only for a short spell).
+Cold deserts of the Himalayas are a feature of a rain-shadow zone created by the mountain peaks of the Himalaya range that runs from Pamir Knot extending to the southern border of the Tibetan plateau; however this mountain range is also the reason for the monsoon rain fall in the Indian subcontinent. This zone is located in an elevation of about 3,000 m, and covers Ladakh, Lahaul, Spiti and Pooh. In addition, there are inner valleys within the main Himalayas such as Chamoli, some areas of Kinnaur, Pithoragarh and northern Sikkim which are also categorized as cold deserts.
+
+		
+			
+			
+		
+		
+			
+			
+		
+		
+			
+			
+		
+		
+			
+			
+		
+		
+			
+			
+		
+		
+			
+			
+		
+
+
+== Mythology and culture ==
+Niflheim was a realm of primordial ice and cold with nine frozen rivers in Norse Mythology.
+The "Hell in Dante's Inferno" is stated as Cocytus a frozen lake where Virgil and Dante were deposited.
+
+
+== See also ==
+
+
+== References ==
+
+Bibliography
+
+Flynn, Thomas (2004). Cryogenics Engineering (2nd ed.). CRC Press. ISBN 0-8247-5367-4.
+Fowlie, Wallace (15 May 1981). A Reading of Dante's Inferno. University of Chicago Press. ISBN 978-0-226-25888-1.
+Lawrence, Ellen (1 January 2012). What Is Climate?. Bearport Publishing. ISBN 978-1-61772-401-5.
+Negi, S.S. (2002). Cold Deserts of India. Indus Publishing. ISBN 978-81-7387-127-6.
+Shachtman, Tom (12 December 2000). Absolute Zero and the Conquest of Cold. Houghton Mifflin Harcourt. ISBN 978-0-547-52595-2.
+Toole, S. J. (23 June 2015). Origin Myth of Me: Reflections of Our Origins Creation of the Lulu. Lulu.com. ISBN 978-1-329-22607-4.
+
+
+== External links ==
+
+Soldier's Handbook for Individual Operations and Survival in Cold-Weather Areas. Smashbooks. 1974.
+Wagner, Tom (28 March 2008). "Tips for Surviving in Antarctica". The New York Times. ISSN 0362-4331. Retrieved 15 February 2016.

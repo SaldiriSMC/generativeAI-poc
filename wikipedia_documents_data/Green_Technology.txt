@@ -1,0 +1,124 @@
+Environmental technology (envirotech)  is the use of engineering and technological approaches to understand and address issues that affect the environment with the aim of fostering environmental improvement. It involves the application of science and technology in the process of addressing environmental challenges through environmental conservation and the mitigation of human impact to the environment.
+The term is sometimes also used to describe sustainable energy generation technologies such as photovoltaics, wind turbines, etc.   
+
+
+== Purification and waste management ==
+
+
+=== Water purification ===
+
+
+=== Air purification ===
+Air purification describes the processes used to remove contaminants and pollutants from the air to reduce the potential adverse effects on humans and the environment. The process of air purification may be performed using methods such as mechanical filtration, ionization, activated carbon adsorption, photocatalytic oxidation, and ultraviolet light germicidal irradiation.
+
+
+=== Sewage treatment ===
+
+
+=== Environmental remediation ===
+Environmental remediation is the process through which contaminants or pollutants in soil, water and other media are removed to improve environmental quality. The main focus is the reduction of hazardous substances within the environment. Some of the areas involved in environmental remediation include; soil contamination, hazardous waste, groundwater contamination, oil, gas and chemical spills. There are three most common types of environmental remediation. These include soil, water, and sediment remediation.            
+Soil remediation consists of removing contaminants in soil, as these pose great risks to humans and the ecosystem. Some examples of this are heavy metals, pesticides, and radioactive materials. Depending on the contaminant the remedial processes can be physical, chemical, thermal, or biological.           
+Water remediation is one of the most important considering water is an essential natural resource. Depending on the source of water there will be different contaminants. Surface water contamination mainly consists of agricultural, animal, and industrial waste, as well as acid mine drainage.  There has been a rise in the need for water remediation due to the increased discharge of industrial waste, leading to a demand for sustainable water solutions. The market for water remediation is expected to consistently increase to $19.6 billion by 2030.           
+Sediment remediation consists of removing contaminated sediments. Is it almost similar to soil remediation except it is often more sophisticated as it involves additional contaminants. To reduce the contaminants it is likely to use physical, chemical, and biological processes that help with source control, but if these processes are executed correctly, there's a risk of contamination resurfacing. 
+
+
+=== Solid waste management ===
+Solid waste management is the purification, consumption, reuse, disposal, and treatment of solid waste that is undertaken by the government or the ruling bodies of a city/town. It refers to the collection, treatment, and disposal of non-soluble, solid waste material. Solid waste is associated with both industrial, institutional, commercial and residential activities. Hazardous solid waste, when improperly disposed can encourage the infestation of insects and rodents, contributing to the spread of diseases. Some of the most common types of solid waste management include; landfills, vermicomposting, composting, recycling, and incineration. However, a major barrier for solid waste management practices is the high costs associated with recycling and the risks of creating more pollution.
+
+
+=== E-Waste Recycling ===
+The recycling of electronic waste (e-waste) has seen significant technological advancements due to increasing environmental concerns and the growing volume of electronic product disposals. Traditional e-waste recycling methods, which often involve manual disassembly, expose workers to hazardous materials and are labor-intensive. Recent innovations have introduced automated processes that improve safety and efficiency, allowing for more precise separation and recovery of valuable materials.
+Modern e-waste recycling techniques now leverage automated shredding and advanced sorting technologies, which help in effectively segregating different types of materials for recycling. This not only enhances the recovery rate of precious metals but also minimizes the environmental impact by reducing the amount of waste destined for landfills. Furthermore, research into biodegradable electronics aims to reduce future e-waste through the development of electronics that can decompose more naturally in the environment.
+These advancements support a shift towards a circular economy, where the lifecycle of materials is extended, and environmental impacts are significantly minimized.
+
+
+=== Bioremediation ===
+Bioremediation is a process that uses microorganisms such as bacteria, fungi, plant enzymes, and yeast to neutrilize hazardous containments that can be in the environment. This could help mitigate a variety of environmental hazards, including oil spills, pesticides, heavy metals, and other pollutants.  Bioremediation can be conducted either on-site ('in situ') or off-site ('ex situ') which is often necessary if the climate is too cold. Factors influencing the duration of bioremediation would include to the extent of the contamination, environmental conditions, and with timelines that can range from months to years.
+
+
+=== Examples ===
+Biofiltration
+Bioreactor
+Bioremediation
+Composting toilet
+Desalination
+Thermal depolymerization
+Pyrolysis
+
+
+== Sustainable energy ==
+
+Concerns over pollution and greenhouse gases have spurred the search for sustainable alternatives to fossil fuel use. The global reduction of greenhouse gases requires the adoption of energy conservation as well as sustainable generation. That environmental harm reduction involves global changes such as:
+
+substantially reducing methane emissions from melting perma-frost, animal husbandry, pipeline and wellhead leakage.
+virtually eliminating fossil fuels for vehicles, heat, and electricity.
+carbon dioxide capture and sequestration at point of combustion.
+widespread use of public transport, battery, and fuel cell vehicles
+extensive implementation of wind/solar/water generated electricity
+reducing peak demands with carbon taxes and time of use pricing.
+Since fuel used by industry and transportation account for the majority of world demand, by investing in conservation and efficiency (using less fuel), pollution and greenhouse gases from these two sectors can be reduced around the globe. Advanced energy-efficient electric motor (and electric generator) technology that are cost-effective to encourage their application, such as variable speed generators and efficient energy use, can reduce the amount of carbon dioxide (CO2) and sulfur dioxide (SO2) that would otherwise be introduced to the atmosphere, if electricity were generated using fossil fuels. Some scholars have expressed concern that the implementation of new environmental technologies in highly developed national economies may cause economic and social disruption in less-developed economies.
+
+
+=== Renewable energy ===
+
+Renewable energy is the energy that can be replenished easily. For years we have been using sources such as wood, sun, water, etc. for means for producing energy. Energy that can be produced by natural objects like the sun, wind, etc. is considered to be renewable. Technologies that have been in usage include wind power, hydropower, solar energy, geothermal energy, and biomass/bioenergy. It refers to any form of energy that naturally regenerates over time, and does not run out. This form of energy naturally replenishes and is characterized by a low carbon footprint. Some of the most common types of renewable energy sources include; solar power, wind power, hydroelectric power, and bioenergy which is generated by burning organic matter.
+
+
+=== Examples ===
+
+Energy saving modules
+Heat pump
+Hydrogen fuel cell
+Hydroelectricity
+Ocean thermal energy conversion
+Photovoltaic
+Solar power
+Wave energy
+Wind power
+Wind turbine
+
+
+==== Renewable Energy Innovations ====
+The intersection of technology and sustainability has led to innovative solutions aimed at enhancing the efficiency of renewable energy systems. One such innovation is the integration of wind and solar power to maximize energy production. Companies like Unéole are pioneering technologies that combine solar panels with wind turbines on the same platform, which is particularly advantageous for urban environments with limited space. This hybrid system not only conserves space but also increases the energy yield by leveraging the complementary nature of solar and wind energy availability.
+Furthermore, advancements in offshore wind technology have significantly increased the viability and efficiency of wind energy. Modern offshore wind turbines feature improvements in structural design and aerodynamics, which enhance their energy capture and reduce costs. These turbines are now more adaptable to various marine environments, allowing for greater flexibility in location and potentially reducing visual pollution. The floating wind turbines, for example, use tension leg platforms and spar buoys that can be deployed in deeper waters, significantly expanding the potential areas for wind energy generation
+Such innovations not only advance the capabilities of individual renewable technologies but also contribute to a more resilient and sustainable energy grid. By optimizing the integration and efficiency of renewable resources, these technologies play a crucial role in the transition towards a sustainable energy future.
+
+
+=== Energy conservation ===
+Energy conservation is the utilization of devices that require smaller amounts of energy in order to reduce the consumption of electricity. Reducing the use of electricity causes less fossil fuels to be burned to provide that electricity. And it refers to the practice of using less energy through changes in individual behaviors and habits. The main emphasis for energy conservation is the prevention of wasteful use of energy in the environment, to enhance its availability. Some of the main approaches to energy conservation involve refraining from using devices that consume more energy, where possible.
+
+
+=== eGain forecasting ===
+Egain forecasting is a method using forecasting technology to predict the future weather's impact on a building. By adjusting the heat based on the weather forecast, the system eliminates redundant use of heat, thus reducing the energy consumption and the emission of greenhouse gases. It is a technology introduced by the eGain International, a Swedish company that intelligently balances building power consumption. The technology involves forecasting the amount of heating energy required by a building within a specific period, which results in energy efficiency and sustainability. eGain lowers building energy consumption and emissions while determining time for maintenance where inefficiencies are observed.
+
+
+=== Solar Power ===
+
+
+== Computational sustainability ==
+
+
+=== Sustainable Agriculture ===
+Sustainable agriculture is an approach to farming that utilizes technology in a way that ensures food protection, while ensuring the long-term health and productivity of agricultural systems, ecosystems, and communities. Historically, technological advancements have significantly contributed to increasing agricultural productivity and reducing physical labor.
+The National Institute of Food and Agriculture improves sustainable agriculture through the use of funded programs aimed at fulfilling human food and fiber needs, improving environmental quality, and preserving natural resources vital to the agricultural economy, optimizing the utilization of both nonrenewable and on-farm resources while integrating natural biological cycles and controls as appropriate, maintaining the economic viability of farm operations, and to foster an improved quality of life for farmers and society at large. Among its initiatives, the NIFA wants to improve farm and ranch practices, integrated pest management, rotational grazing, soil conservation, water quality/wetlands, cover crops, crop/landscape diversity, nutrient management, agroforestry, and alternative marketing.
+
+
+== Education ==
+Courses aimed at developing graduates with some specific skills in environmental systems or environmental technology are becoming more common and fall into three broads classes:
+
+Environmental Engineering or Environmental Systems courses oriented towards a civil engineering approach in which structures and the landscape are constructed to blend with or protect the environment;
+Environmental chemistry, sustainable chemistry or environmental chemical engineering courses oriented towards understanding the effects (good and bad) of chemicals in the environment.  Such awards can focus on mining processes, pollutants and commonly also cover biochemical processes;
+Environmental technology courses oriented towards producing electronic, electrical or electrotechnology graduates capable of developing devices and artifacts able to monitor, measure, model and control environmental impact, including monitoring and managing energy generation from renewable sources, and developing novel energy generation technologies.
+
+
+== See also ==
+
+
+== References ==
+
+
+== Further reading ==
+OECD Studies on Environmental Innovation Invention and Transfer of Environmental Technologies. OECD. September 2011. ISBN 978-92-64-11561-3.
+
+
+== External links ==

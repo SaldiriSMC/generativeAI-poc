@@ -1,0 +1,264 @@
+Futures studies, futures research, futurism research, futurism, or futurology is the systematic, interdisciplinary and holistic study of social/technological advancement, and other environmental trends; often for the purpose of exploring how people will live and work in the future. Predictive techniques, such as forecasting, can be applied, but contemporary futures studies scholars emphasize the importance of systematically exploring alternatives. In general, it can be considered as a branch of the social sciences and an extension to the field of history. Futures studies (colloquially called "'futures" by many of the field's practitioners) seeks to understand what is likely to continue and what could plausibly change. Part of the discipline thus seeks a systematic and pattern-based understanding of past and present, and to explore the possibility of future events and trends.
+Unlike the physical sciences where a narrower, more specified system is studied, futurology concerns a much bigger and more complex world system. The methodology and knowledge are much less proven than in natural science and social sciences like sociology and economics. There is a debate as to whether this discipline is an art or science, and it is sometimes described as pseudoscience; nevertheless, the Association of Professional Futurists was formed in 2002, developing a Foresight Competency Model in 2017, and it is now possible to study it academically, for example at the FU Berlin in their master's course. To encourage inclusive and cross-disciplinary discussions about futures studies, UNESCO declared December 2 as World Futures Day.
+
+
+== Overview ==
+Futurology is an interdisciplinary field that aggregates and analyzes trends, with both lay and professional methods, to compose possible futures. It includes analyzing the sources, patterns, and causes of change and stability in an attempt to develop foresight. Around the world the field is variously referred to as futures studies, futures research, strategic foresight, futuristics, futures thinking, futuring, and futurology. Futures studies and strategic foresight are the academic field's most commonly used terms in the English-speaking world.
+Foresight was the original term and was first used in this sense by H. G. Wells in 1932. "Futurology" is a term common in encyclopedias, though it is used almost exclusively by nonpractitioners today, at least in the English-speaking world. "Futurology" is defined as the "study of the future". The term was coined by German professor Ossip K. Flechtheim in the mid-1940s, who proposed it as a new branch of knowledge that would include a new science of probability. This term has fallen from favor in recent decades because modern practitioners stress the importance of alternative, plausible, preferable and plural futures, rather than one monolithic future, and the limitations of prediction and probability, versus the creation of possible and preferable futures.
+Three factors usually distinguish futures studies from the research conducted by other disciplines (although all of these disciplines overlap, to differing degrees). First, futures studies often examines trends to compose possible, probable, and preferable futures along with the role "wild cards" can play on future scenarios. Second, futures studies typically attempts to gain a holistic or systemic view based on insights from a range of different disciplines, generally focusing on the STEEP categories of Social, Technological, Economic, Environmental and Political. Third, futures studies challenges and unpacks the assumptions behind dominant and contending views of the future. The future thus is not empty but fraught with hidden assumptions. For example, many people expect the collapse of the Earth's ecosystem in the near future, while others believe the current ecosystem will survive indefinitely. A foresight approach would seek to analyze and highlight the assumptions underpinning such views.
+As a field, futures studies expands on the research component, by emphasizing the communication of a strategy and the actionable steps needed to implement the plan or plans leading to the preferable future. It is in this regard, that futures studies evolves from an academic exercise to a more traditional business-like practice, looking to better prepare organizations for the future.
+Futures studies does not generally focus on short term predictions such as interest rates over the next business cycle, or of managers or investors with short-term time horizons. Most strategic planning, which develops goals and objectives with time horizons of one to three years, is also not considered futures. Plans and strategies with longer time horizons that specifically attempt to anticipate possible future events are definitely part of the field. Learning about medium and long-term developments may at times be observed from their early signs. As a rule, futures studies is generally concerned with changes of transformative impact, rather than those of an incremental or narrow scope.
+The futures field also excludes those who make future predictions through professed supernatural means.
+To complete a futures study, a domain is selected for examination. The domain is the main idea of the project, or what the outcome of the project seeks to determine. Domains can have a strategic or exploratory focus and must narrow down the scope of the research. It examines what will, and more importantly, will not be discussed in the research.
+Futures practitioners study trends focusing on STEEP (Social, Technological, Economic, Environments and Political) baselines. Baseline exploration examine current STEEP environments to determine normal trends, called baselines. Next, practitioners use scenarios to explore different futures outcomes. Scenarios examine how the future can be different.
+1.	Collapse Scenarios seek to answer: What happens if the STEEP baselines fall into ruin and no longer exist? How will that impact STEEP categories?
+2.	Transformation Scenarios: explore futures with the baseline of society transiting to a "new" state. How are the STEEP categories effected if society has a whole new structure?
+3.	New Equilibrium: examines an entire change to the structure of the domain. What happens if the baseline changes to a "new" baseline within the same structure of society?
+
+
+== History ==
+
+
+=== Origins ===
+ 
+Johan Galtung and Sohail Inayatullah argue that the search for grand patterns goes all the way back to Sima Qian (145–90 BC) and Ibn Khaldun (1332–1406). Early western examples include Sir Thomas More's Utopia (1516) in which a future society has overcome poverty and misery.
+Advances in mathematics in the 17th century prompted attempts to calculate statistical and probabilistic concepts. Objectivity became linked to knowledge that could be expressed in numerical data. In 18th century Britain, investors established mathematical formulas to assess the future value of an asset. In 1758 the French economist François Quesnay proceeded to establish a quantitative model of the entire economy, known as the Tableau Economique, so that future production could be planned. Meanwhile, Anne Robert Jacques Turgot first articulated the law of diminishing returns. In 1793 the Chinese bureaucrat Hong Liangji forecasted future population growth.
+The Industrial Revolution was on the verge of spreading across the European continent, when in 1798 Thomas Malthus published An essay on the principle of Population as it affects the Future Improvement of Society. Malthus questioned optimistic utopias and theories of progress. Malthus' fear about the survival of the human race is regarded as an early European dystopia. Starting in the 1830s, Auguste Comte developed theories of social evolution and claimed that metapatterns could be discerned in social change. In the 1870s Herbert Spencer blended Compte's theories with Charles Darwin's biological evolution theory. Social Darwinism became popular in Europe and the USA. By the late 19th century, the belief in human progress and the triumph of scientific invention prevailed and science fiction became a popular future narrative. In 1888 William Morris published News from Nowhere, in which he theorized about how working time could be reduced.
+
+
+=== Early 20th century ===
+
+The British H. G. Wells established the genre of "true science fiction" at the turn of the century. Well's works were supposedly based on sound scientific knowledge. Wells became a forerunner of social and technological forecasting. A series of techno-optimistic newspaper articles and books were published between 1890 and 1914 in the US and Europe. After World War I the Italian Futurism movement led by Filippo Tommaso Marinetti glorified modernity. Soviet futurists, such as Vladimir Mayakovsky, David Burliuk, and Vasily Kamensky struggled against official communist cultural policy throughout the 20th century. In Japan, futurists gained traction after World War I by denouncing the Meiji era and glorifying speed and technological progress.
+With the end of World War I interest in statistical forecasting intensified. In statistics, a forecast is a calculation of a future event's magnitude or probability. Forecasting calculates the future, while an estimate attempts to establish the value of an existing quantity. In the United States, President Hoover established a Research Committee on Social Trends in 1929 headed by William F. Ogburn. Past statistics were used to chart trends and project those trends into the future. Planning became part of the political decision-making process after World War II as capitalist and communist governments across the globe produced predictive forecasts. The RAND Corporation was founded in 1945 to assist the US military with post-war planning. The long-term planning of military and industrial Cold War efforts peaked in the 1960s when peace research emerged as a counter-movement and the positivist idea of "the one predictable future" was called into question.
+
+
+=== 1960s futures research ===
+In 1954 Robert Jungk published a critique of the US and the supposed colonization of the future in Tomorrow is already Here. Fred L. Polak published Images of the Future in 1961, it has become a classic text on imagining alternative futures. In the 1960s, human-centered methods of future studies were developed in Europe by Bertrand de Jouvenel and Johan Galtung. The positivist idea of a single future was challenged by scientists such as Thomas Kuhn, Karl Popper, and Jürgen Habermas. Future studies established itself as an academic field when social scientists began to question positivism as a plausible theory of knowledge and instead turned to pluralism. At the 1967 First international Future Research Conference" in Oslo research on urban sprawl, hunger, and education was presented. In 1968 Olaf Helmer of the RAND Corporation conceded "One begins to realize that there is a wealth of possible futures and that these possibilities can be shaped in different ways". Future studies worked on the basis that a multitude of possible futures could be estimated, forecast, and manipulated.
+Futures studies was developed as an empirical research field. Inspired by Herman Kahn's publications, future studies employed techniques such as scenario planning, game theory, and computer simulations. Historians, political scientists and sociologists who engaged in critical futures studies, such as Ossip K. Flechtheim, and Johan Galtung, laid the foundations of peace and conflict studies as an academic discipline.
+The international academic dialogue on futures studies became institutionalized in the form of the World Futures Studies Federation (WFSF), founded in 1967. The first doctoral program on the Study of the Future, was founded in 1969 at the University of Massachusetts by Christopher Dede and Billy Rojas. Dede also founded a master's degree program in 1975 at the University of Houston–Clear Lake. In 1976, the M.A. Program in Public Policy in Alternative Futures at the University of Hawaii at Manoa was established.
+
+
+=== Forecasting further development ===
+Alvin & Heidi Toffler's bestseller Future Shock in 1970 generated mainstream attention for futures studies on the post-industrial economy. It popularized the metaphor of waves to describe the economic and social changes the United States was experiencing. The authors identified the first wave as agricultural society, the second wave as industrial society and the nascent third wave as information society. In the 1970s, future studies focused less on Cold War scenarios and instead grappled on the impact of accelerated globalization. Pioneers of global future studies include Pierre Wack of Royal Dutch Shell, the Interfuture group at the Organisation for Economic Co-operation and Development (OECD) and the Club of Rome. The Club of Rome challenged the political status quo in 1972 with the report The Limits to Growth by putting computer simulations of economic growth alongside projections of population growth.
+
+The 1972 report The Limits to Growth established environmental degradation firmly on the political agenda. The environmental movement demanded of industry and policymakers to consider long-term implications when planning and investing in power plants and infrastructure.
+The 1990s saw a surge in futures studies in preparation for the United Nations' Millennium Development Goals, which were adopted in 2000 as international development goals for the year 2015. Throughout the 1990s large technology foresight programs were launched which informed national and regional strategies on science, technology and innovation. Prior to the 1990s foresight was rarely used to describe future studies, futurology or forecasting. Foresight prognosis relied in part on the methodologies developed by the French pioneers of prospectives research, including Bertrand de Jouvenel. Foresight practitioners attempted to gather and evaluate evidence based insights for the future. Foresight research output focused on identifying challenges and opportunities, which was presented as intelligence at a strategic level. Practitioners tended to focus on particular companies or economic regions, while making no attempt to plan for specific problems.
+In the 1990s several future studies practitioners attempted to synthesize a coherent framework for the futures studies research field, including Wendell Bell's two-volume work, The Foundations of Futures Studies, and Ziauddin Sardar's Rescuing all of our Futures.
+
+
+== Forecasting and futures techniques ==
+
+Futures techniques or methodologies may be viewed as "frameworks for making sense of data generated by structured processes to think about the future". There is no single set of methods that are appropriate for all futures research. Different futures researchers intentionally or unintentionally promote use of favored techniques over a more structured approach. Selection of methods for use on futures research projects has so far been dominated by the intuition and insight of practitioners; but can better identify a balanced selection of techniques via acknowledgement of foresight as a process together with familiarity with the fundamental attributes of most commonly used methods.
+Futurology is sometimes described by scientists as a pseudoscience, as it often deals with speculative scenarios and long-term predictions that can be difficult to test using traditional scientific methods.
+
+Scenarios are a central technique in futures studies, and are often confused with other techniques. The flowchart to the right provides a process for classifying a phenomenon as a scenario in the intuitive logics tradition.
+Futurists use a diverse range of forecasting and foresight methods including:
+
+Framework Foresight
+Prediction markets
+Causal layered analysis (CLA)
+Environmental scanning
+Horizon scanning
+Scenario method
+Education and Learning
+Delphi method, including real-time Delphi
+Future history
+Monitoring
+Backcasting (eco-history)
+Cross-impact analysis
+Futures workshops
+Three Horizons (3H)
+Seeds of Good Anthropocenes
+Anticipatory action learning
+Predictive analytics
+Failure mode and effects analysis
+Futures wheel
+Technology roadmapping
+Social network analysis
+Systems engineering
+Trend analysis
+Morphological analysis
+Technology forecasting
+Theory U
+
+
+=== Shaping alternative futures ===
+Futurists use scenarios—alternative possible futures—as an important tool. To some extent, people can determine what they consider probable or desirable using qualitative and quantitative methods. By looking at a variety of possibilities one comes closer to shaping the future, rather than predicting it. Shaping alternative futures starts by establishing a number of scenarios. Setting up scenarios takes place as a process with many stages, and can take place in an evidence-based manner. Scenarios can also study unlikely and improbable developments that would otherwise be ignored. However, for credibility, they should not be entirely utopian or dystopian. One of those stages involves the study of emerging issues, such as megatrends, trends and weak signals. Megatrends illustrate major, long-term phenomena that change slowly, are often interlinked and cannot be transformed in an instant. Trends express an increase or a decrease in a phenomenon, and there are many ways to spot trends. Some argue that a trend persists long-term and long-range; affects many societal groups; grows slowly; and appears to have a profound basis. A fad operates in the short term, shows the vagaries of fashion, affects particular societal groups, and spreads quickly but superficially.
+Futurists have a decidedly mixed reputation and a patchy track record at successful prediction. Many 1950s futurists predicted commonplace space tourism by 2000, but ignored the possibilities of ubiquitous, cheap computers. On the other hand, many forecasts have portrayed the future with some degree of accuracy. Sample predicted futures range from predicted ecological catastrophes, through a utopian future where the poorest human being lives in what present-day observers would regard as wealth and comfort, through the transformation of humanity into a posthuman life-form, to the destruction of all life on Earth in, say, a nanotechnological disaster. For reasons of convenience, futurists have often extrapolated present technical and societal trends and assumed they will develop at the same rate into the future; but technical progress and social upheavals, in reality, take place in fits and starts and in different areas at different rates.
+Therefore, to some degree, the field has aimed to move away from prediction. Current futurists often present multiple scenarios that help their audience envision what "may" occur instead of "predicting the future". They claim that understanding potential scenarios helps individuals and organizations prepare with flexibility.
+Many corporations use futurists as part of their risk management strategy, for horizon scanning and emerging issues analysis, and to identify wild cards—low probability, potentially high-impact risks. Understanding a range of possibilities can enhance the recognition of opportunities and threats. Every successful and unsuccessful business engages in futuring to some degree—for example in research and development, innovation and market research, anticipating competitor behavior and so on. Role-playing is another way that possible futures can be collectively explored, as in the research larp Civilisation's Waiting Room.
+
+
+=== Weak signals, the future sign and wild cards ===
+In futures research "weak signals" may be understood as advanced, noisy and socially situated indicators of change in trends and systems that constitute raw informational material for enabling anticipatory action. There is some confusion about the definition of weak signal by various researchers and consultants. Sometimes it is referred as future oriented information, sometimes more like emerging issues. The confusion has been partly clarified with the concept 'the future sign', by separating signal, issue and interpretation of the future sign.
+A weak signal can be an early indicator of coming change, and an example might also help clarify the confusion. On May 27, 2012, hundreds of people gathered for a "Take the Flour Back" demonstration at Rothamsted Research in Harpenden, UK, to oppose a publicly funded trial of genetically modified wheat. This was a weak signal for a broader shift in consumer sentiment against genetically modified foods. When Whole Foods mandated the labeling of GMOs in 2013, this non-GMO idea had already become a trend and was about to be a topic of mainstream awareness.
+"Wild cards" refer to low-probability and high-impact events "that happen quickly" and "have huge sweeping consequences", and materialize too quickly for social systems to effectively respond. Elina Hiltunen notes that wild cards are not new, though they have become more prevalent. One reason for this may be the increasingly fast pace of change. Oliver Markley proposed four types of wild cards:
+
+Type I Wild Card: low probability, high impact, high credibility
+Type II Wild Card: high probability, high impact, low credibility
+Type III Wild Card: high probability, high impact, disputed credibility
+Type IV Wild Card: high probability, high impact, high credibility
+He posits that it is important to track the emergence of "Type II Wild Cards" that have a high probability of occurring, but low credibility that it will happen. This focus is especially important to note because it is often difficult to persuade people to accept something they do not believe is happening, until they see the wild card. An example is climate change. This hypothesis has gone from Type I (high impact and high credibility, but low probability where science was accepted and thought unlikely to happen) to Type II (high probability, high impact, but low credibility as policy makers and lobbyists push back against the science), to Type III (high probability, high impact, disputed credibility) — at least for most people: There are still some who probably will not accept the science until the Greenland ice sheet has completely melted and sea-level has risen the seven meters estimated rise.
+This concept may be embedded in standard foresight projects and introduced into anticipatory decision-making activity in order to increase the ability of social groups adapt to surprises arising in turbulent business environments. Such sudden and unique incidents might constitute turning points in the evolution of a certain trend or system. Wild cards may or may not be announced by weak signals, which are incomplete and fragmented data from which relevant foresight information might be inferred. Sometimes, mistakenly, wild cards and weak signals are considered as synonyms, which they are not. One of the most often cited examples of a wild card event in recent history is 9/11. Nothing had happened in the past that could point to such a possibility and yet it had a huge impact on everyday life in the United States, from simple tasks like how to travel via airplane to deeper cultural values. Wild card events might also be natural disasters, such as Hurricane Katrina, which can force the relocation of huge populations and wipe out entire crops or completely disrupt the supply chain of many businesses. Although wild card events cannot be predicted, after they occur it is often easy to reflect back and convincingly explain why they happened.
+
+
+=== Near-term predictions ===
+A long-running tradition in various cultures, and especially in the media, involves various spokespersons making predictions for the upcoming year at the beginning of the year. These predictions are thought-provokers, which sometimes base themselves on current trends in culture (music, movies, fashion, politics); sometimes they make hopeful guesses as to what major events might take place over the course of the next year. Evidently, some of these predictions may come true as the year unfolds, though many fail. When predicted events fail to take place, the authors of the predictions may state that misinterpretation of the "signs" and portents may explain the failure of the prediction.
+Marketers have increasingly started to embrace futures studies, in an effort to benefit from an increasingly competitive marketplace with fast production cycles, using such techniques as trendspotting as popularized by Faith Popcorn.
+
+
+=== Trend analysis and forecasting ===
+
+
+==== Megatrends ====
+Trends come in different sizes. A megatrend extends over many generations, and in cases of climate, megatrends can cover periods prior to human existence. They describe complex interactions between many factors. The increase in population from the palaeolithic period to the present provides an example. Megatrends are likely to produce greater change than any previous one, because technology is causing trends to unfold at an accelerating pace. The concept was popularized by the 1982 book Megatrends by futurist John Naisbitt.
+
+
+==== Potential trends ====
+Possible new trends grow from innovations, projects, beliefs or actions and activism that have the potential to grow and eventually go mainstream in the future.
+
+
+==== Branching trends ====
+Very often, trends relate to one another the same way as a tree-trunk relates to branches and twigs. For example, a well-documented movement toward equality between men and women might represent a branch trend. The trend toward reducing differences in the salaries of men and women in the Western world could form a twig on that branch.
+
+
+==== Life cycle of a trend ====
+Understanding the technology adoption cycle helps futurists monitor trend development. Trends start as weak signals by small mentions in fringe media outlets, discussion conversations or blog posts, often by innovators. As these ideas, projects, beliefs or technologies gain acceptance, they move into the phase of early adopters.
+In the beginning of a trend's development, it is difficult to tell if it will become a significant trend that creates changes or merely a trendy fad that fades into forgotten history. Trends will emerge as initially unconnected dots but eventually coalesce into persistent change.
+Some trends emerge when enough confirmation occurs in the various media, surveys or questionnaires to show that it has an increasingly accepted value, behavior or technology, it becomes accepted as a bona fide trend. Trends can also gain confirmation by the existence of other trends perceived as springing from the same branch. Some commentators claim that when 15% to 25% of a given population integrates an innovation, project, belief or action into their daily life then a trend becomes mainstream.
+
+
+==== Life cycle of technologies ====
+
+Gartner created their Hype cycle to illustrate the phases a technology moves through as it grows from research and development to mainstream adoption. The unrealistic expectations and subsequent disillusionment that virtual reality experienced in the 1990s and early 2000s is an example of the middle phases encountered before a technology can begin to be integrated into society.
+
+
+== Education ==
+Education in the field of futures studies has taken place for some time. Beginning in the United States in the 1960s, it has since developed in many different countries. Futures education encourages the use of concepts, tools and processes that allow students to think long-term, consequentially, and imaginatively. It generally helps students to:
+
+conceptualize more just and sustainable human and planetary futures.
+develop knowledge and skills of methods and tools used to help people understand, map, and influence the future by exploring probable and preferred futures.
+understand the dynamics and influence that human, social and ecological systems have on alternative futures.
+conscientize responsibility and action on the part of students toward creating better futures.
+Thorough documentation of the history of futures education exists, for example in the work of Richard A. Slaughter (2004), David Hicks, Ivana Milojević to name a few.
+While futures studies remains a relatively new academic tradition, numerous tertiary institutions around the world teach it. These vary from small programs, or universities with just one or two classes, to programs that offer certificates and incorporate futures studies into other degrees, (for example in planning, business, environmental studies, economics, development studies, science and technology studies). Various formal Masters-level programs exist on six continents. Finally, doctoral dissertations around the world have incorporated futures studies (see e.g. Rohrbeck, 2010; von der Gracht, 2008; Hines, 2012). A recent survey documented approximately 50 cases of futures studies at the tertiary level.
+A Futures Studies program is offered at Tamkang University, Taiwan. Futures Studies is a required course at the undergraduate level, with between three and five thousand students taking classes on an annual basis. Housed in the Graduate Institute of Futures Studies is an MA Program. Only ten students are accepted annually in the program. Associated with the program is the Journal of Futures Studies.
+The longest running Future Studies program in North America was established in 1975 at the University of Houston–Clear Lake. It moved to the University of Houston in 2007 and renamed the degree to Foresight. The program was established on the belief that if history is studied and taught in an academic setting, then so should the future. Its mission is to prepare professional futurists. The curriculum incorporates a blend of the essential theory, a framework and methods for doing the work, and a focus on application for clients in business, government, nonprofits, and society in general.
+As of 2003, over 40 tertiary education establishments around the world were delivering one or more courses in futures studies. The World Futures Studies Federation has a comprehensive survey of global futures programs and courses. The Acceleration Studies Foundation maintains an annotated list of primary and secondary graduate futures studies programs.
+A MA Program in Futures Studies has been offered at Free University of Berlin since 2010.
+A MSocSc and PhD program in Futures Studies is offered at the University of Turku, Finland.
+The University of Stellenbosch Business School in South Africa offers a PGDip in Future Studies as well as a MPhil in Future Studies degree.
+
+
+== Applications of foresight and specific fields ==
+
+
+=== General applicability and use of foresight products ===
+Several corporations and government agencies use foresight products to both better understand potential risks and prepare for potential opportunities as an anticipatory approach. Several government agencies publish material for internal stakeholders as well as make that material available to broader public. Examples of this include the US Congressional Budget Office long term budget projections, the National Intelligence Center, and the United Kingdom Government Office for Science. Much of this material is used by policy makers to inform policy decisions and government agencies to develop long-term plan. Several corporations, particularly those with long product development lifecycles, use foresight and future studies products and practitioners in the development of their business strategies. The Shell Corporation is one such entity. Foresight professionals and their tools are increasingly being used in both the private and public areas to help leaders deal with an increasingly complex and interconnected world.
+
+
+=== Imperial cycles and world order ===
+Imperial cycles represent an "expanding pulsation" of "mathematically describable" macro-historic trend.
+Chinese philosopher Kang Youwei and French demographer Georges Vacher de Lapouge stressed in the late 19th century that the trend cannot proceed indefinitely on the finite surface of the globe. The trend is bound to culminate in a world empire. Kang Youwei predicted that the matter will be decided in a contest between Washington and Berlin; Vacher de Lapouge foresaw this contest as being between the United States and Russia and wagered the odds were in the United States' favour. Both published their futures studies before H. G. Wells introduced the science of future in his Anticipations (1901).
+Four later anthropologists—Hornell Hart, Raoul Naroll, Louis Morano, and Robert Carneiro—researched the expanding imperial cycles. They reached the same conclusion that a world empire is not only pre-determined but close at hand and attempted to estimate the time of its appearance.
+
+
+=== Education ===
+As foresight has expanded to include a broader range of social concerns all levels and types of education have been addressed, including formal and informal education. Many countries are beginning to implement Foresight in their Education policy. A few programs are listed below:
+
+Finland's FinnSight 2015 – Implementation began in 2006 and though at the time was not referred to as "Foresight" they tend to display the characteristics of a foresight program.
+Singapore's Ministry of Education Master plan for Information Technology in Education – This third Masterplan continues what was built on in the 1st and 2nd plans to transform learning environments to equip students to compete in a knowledge economy.
+The World Future Society, founded in 1966, is the largest and longest-running community of futurists in the world. WFS established and built futurism from the ground up—through publications, global summits, and advisory roles to world leaders in business and government.
+By the early 2000s, educators began to independently institute futures studies (sometimes referred to as futures thinking) lessons in K-12 classroom environments. To meet the need, non-profit futures organizations designed curriculum plans to supply educators with materials on the topic. Many of the curriculum plans were developed to meet common core standards. Futures studies education methods for youth typically include age-appropriate collaborative activities, games, systems thinking and scenario building exercises.
+There are several organizations devoted to furthering the advancement of Foresight and Future Studies worldwide. Teach the Future emphasizes foresight educational practices appropriate for K-12 schools. Warmer Sun Education is a global online learning community for K-12 students and their parents to learn about exponential progress, emerging technologies and their applications and exploring possible pathways to solve humanity's grand challenges. The University of Houston has a Master's (MS) level graduate program through the College of Technology as well as a certificate program for those interested in advanced studies. The Department of Political Science and College of Social Sciences at the University of Hawaii Manoa has the Hawaii Research Center for Future Studies which offers a Master's (MA) in addition to a Doctorate (PhD).
+
+
+=== Science fiction ===
+Wendell Bell and Ed Cornish acknowledge science fiction as a catalyst to future studies, conjuring up visions of tomorrow. Science fiction's potential to provide an "imaginative social vision" is its contribution to futures studies and public perspective. Productive sci-fi presents plausible, normative scenarios. Jim Dator attributes the foundational concepts of "images of the future" to Wendell Bell, for clarifying Fred Polak's concept in Images of the Future, as it applies to futures studies. Similar to futures studies' scenarios thinking, empirically supported visions of the future are a window into what the future could be. However, unlike in futures studies, most science fiction works present a single alternative, unless the narrative deals with multiple timelines or alternative realities, such as in the works of Philip K. Dick, and a multitude of small and big screen works. Pamela Sargent states, "Science fiction reflects attitudes typical of this century." She gives a brief history of impactful sci-fi publications, like The Foundation Trilogy by Isaac Asimov, and Starship Troopers by Robert A. Heinlein. Alternate perspectives validate sci-fi as part of the fuzzy "images of the future".
+Brian David Johnson is a futurist and author who uses science fiction to help build the future. He has been a futurist at Intel, and is now the resident futurist at Arizona State University. "His work is called 'future casting'—using ethnographic field studies, technology research, trend data, and even science fiction to create a pragmatic vision of consumers and computing." Brian David Johnson has developed a practical guide to using science fiction as a tool for futures studies. Science fiction prototyping combines the past with the present, including interviews with notable science fiction authors to provide the tools needed to "design the future with science fiction."
+Science Fiction Prototyping has five parts:
+
+Pick your science concept and build an imaginative world
+The scientific inflection point
+The consequences, for better, or worse, or both, of the science or technology on the people and your world
+The human inflection point
+Reflection, what did we learn?
+"A full Science Fiction Prototyping (SFP) is 6–12 pages long, with a popular structure being; an introduction, background work, the fictional story (the bulk of the SFP), a short summary and a summary (reflection). Most often science fiction prototypes extrapolate current science forward and, therefore, include a set of references at the end."
+Ian Miles reviews The New Encyclopedia of Science Fiction, identifying ways Science Fiction and Futures Studies "cross-fertilize, as well as the ways in which they differ distinctly." Science Fiction cannot be simply considered fictionalized Futures Studies. It may have aims other than foresight or "prediction, and be no more concerned with shaping the future than any other genre of literature." It is not to be understood as an explicit pillar of futures studies, due to its inconsistency of integrated futures research. Additionally, Dennis Livingston, a literature and Futures journal critic says, "The depiction of truly alternative societies has not been one of science fiction's strong points, especially" preferred, normative envisages. The strengths of the genre as a form of futurist thinking are discussed by Tom Lombardo, who argues that select science fiction "combines a highly detailed and concrete level of realism with theoretical speculation on the future", "addresses all the main dimensions of the future and synthesizes all these dimensions into integrative visions of the future", and "reflects contemporary and futurist thinking", therefore it "can be viewed as the mythology of the future."
+It is notable that although there are no hard limits on horizons in future studies and foresight efforts, typical future horizons explored are within the realm of the practical and do not span more than a few decades. Nevertheless, there are hard science fiction works that can be applicable as visioning exercises that span longer periods of time when the topic is of a significant time scale, such as is in the case of Kim Stanley Robinson's Mars trilogy, which deals with the terraforming of Mars and extends two centuries forward through the early 23rd century. In fact, there is some overlap between science fiction writers and professional futurists such as in the case of David Brin. Arguably, the work of science fiction authors has seeded many ideas that have later been developed (be it technological or social in nature)—from early works of Jules Verne and H.G. Wells to the later Arthur C. Clarke and William Gibson. Beyond literary works, futures studies and futurists have influenced film and TV works. The 2002 movie adaptation of Philip K. Dick's short stort, Minority Report, had a group of consultants to build a realistic vision of the future, including futurist Peter Schwartz. TV shows such as HBO's Westworld and Channel 4/Netflix's Black Mirror follow many of the rules of futures studies to build the world, the scenery and storytelling in a way futurists would in experiential scenarios and works.
+Science Fiction novels for Futurists:
+
+William Gibson, Neuromancer, Ace Books, 1984. (Pioneering cyberpunk novel)
+Kim Stanley Robinson, Red Mars, Spectra, 1993. (Story on the founding a colony on Mars)
+Bruce Sterling, Heavy Weather, Bantam, 1994. (Story about a world with drastically altered climate and weather)
+Iain Banks' Culture novels (Space operas in distance future with thoughtful treatments of advanced AI)
+
+
+=== Government agencies ===
+Several governments have formalized strategic foresight agencies to encourage long range strategic societal planning, with most notable are the governments of Singapore, Finland, and the United Arab Emirates. Other governments with strategic foresight agencies include Canada's Policy Horizons Canada and the Malaysia's Malaysian Foresight Institute.
+The Singapore government's Centre for Strategic Futures (CSF) is part of the Strategy Group within the Prime Minister's Office. Their mission is to position the Singapore government to navigate emerging strategic challenges and harness potential opportunities. Singapore's early formal efforts in strategic foresight began in 1991 with the establishment of the Risk Detection and Scenario Planning Office in the Ministry of Defence. In addition to the CSF, the Singapore government has established the Strategic Futures Network, which brings together deputy secretary-level officers and foresight units across the government to discuss emerging trends that may have implications for Singapore.
+Since the 1990s, Finland has integrated strategic foresight within the parliament and Prime Minister's Office. The government is required to present a "Report of the Future" each parliamentary term for review by the parliamentary Committee for the Future. Led by the Prime Minister's Office, the Government Foresight Group coordinates the government's foresight efforts. Futures research is supported by the Finnish Society for Futures Studies (established in 1980), the Finland Futures Research Centre (established in 1992), and the Finland Futures Academy (established in 1998) in coordination with foresight units in various government agencies.
+In the United Arab Emirates, Sheikh Mohammed bin Rashid, Vice President and Ruler of Dubai, announced in September 2016 that all government ministries were to appoint Directors of Future Planning. Sheikh Mohammed described the UAE Strategy for the Future as an "integrated strategy to forecast our nation's future, aiming to anticipate challenges and seize opportunities". The Ministry of Cabinet Affairs and Future (MOCAF) is mandated with crafting the UAE Strategy for the Future and is responsible for the portfolio of the future of UAE.
+In 2018, the United States General Accountability Office (GAO) created the Center for Strategic Foresight to enhance its ability to "serve as the agency's principal hub for identifying, monitoring, and analyzing emerging issues facing policymakers." The center is composed of non-resident Fellows who are considered leading experts in foresight, planning and future thinking. In September 2019 they hosted a conference on space policy and "deep fake" synthetic media to manipulate online and real-world interactions.
+
+
+=== Risk analysis and management ===
+
+Foresight is a framework or lens which could be used in risk analysis and management in a medium- to long-term time range. A typical formal foresight project would identify key drivers and uncertainties relevant to the scope of analysis. It would also analyze how the drivers and uncertainties could interact to create the most probable scenarios of interest and what risks they might contain. An additional step would be identifying actions to avoid or minimize these risks.
+One classic example of such work was how foresight work at the Royal Dutch Shell international oil company led to envision the turbulent oil prices of the 1970s as a possibility and better embed this into company planning. Yet the practice at Shell focuses on stretching the company's thinking rather than in making predictions. Its planning is meant to link and embed scenarios in "organizational processes such as strategy making, innovation, risk management, public affairs, and leadership development."
+Foresight studies can also consider the possibility of "wild card" events—or events that many consider would be impossible to envision—although often such events can be imagined as remote possibilities as part of foresight work. One of many possible areas of focus for a foresight lens could also be identifying conditions for potential scenarios of high-level risks to society.
+These risks may arise from the development and adoption of emerging technologies and/or social change. Special interest lies on hypothetical future events that have the potential to damage human well-being on a global scale—global catastrophic risks. Such events may cripple or destroy modern civilization or, in the case of existential risks, even cause human extinction. Potential global catastrophic risks include but are not limited to climate change, hostile artificial intelligence, nanotechnology weapons, nuclear warfare, total war, and pandemics. The aim of a professional futurist would be to identify conditions that could lead to these events to create "pragmatically feasible roads to alternative futures."
+
+
+== Futurists ==
+Futurists are practitioners of the foresight profession, which seeks to provide organizations and individuals with images of the future to help them prepare for contingencies and to maximize opportunities. A foresight project begins with a question that ponders the future of any given subject area, including technology, medicine, government and business. Futurists engage in environmental scanning to search for drivers of change and emerging trends that may have an effect on the focus topic. The scanning process includes reviewing social media platforms, researching already prepared reports, engaging in Delphi studies, reading articles and any other sources of relevant information and preparing and analyzing data extrapolations. Then, through one of a number of highly structured methods futurists organize this information and use it to create multiple future scenarios for the topic, also known as a domain. The value of preparing many different versions of the future rather than a singular prediction is that they provide a client with the ability to prepare long-range plans that will weather and optimize a variety of contexts.
+
+
+=== Books ===
+
+
+=== APF's list of most significant futures works ===
+The Association for Professional Futurists recognizes the Most Significant Futures Works for the purpose of identifying and rewarding the work of foresight professionals and others whose work illuminates aspects of the future.
+
+
+=== Other notable foresight books ===
+
+
+=== Periodicals and journals ===
+
+
+== Organizations ==
+
+
+=== Foresight professional networks ===
+World Future Society
+World Futures Studies Federation
+World Future Council
+Association of Professional Futurists
+The Millennium Project
+
+
+=== Public-sector foresight organizations ===
+National Intelligence Council
+NASA Institute for Advanced Concepts
+Government Office for Science (United Kingdom)
+MiGHT – Malaysian Industry Government Group for High Technology
+
+
+=== Non-governmental foresight organizations ===
+
+
+== See also ==
+
+Future of Earth
+Novopangaea – Possible future supercontinent
+Amasia (continent) – Possible future supercontinentPages displaying short descriptions of redirect targets
+Aurica (supercontinent) – Possible future supercontinent
+
+
+== References ==
+
+
+== External links ==
+
+Future at Curlie
