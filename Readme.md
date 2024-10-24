@@ -216,8 +216,9 @@ print(chat_completion.choices[0].message.content)
     ```bash
     python main.py
     ```
+4. **Run the Django Project** to chat with AI using UI on web.
 
-4. **Enter your query** when prompted. The system will fetch relevant data from the Wikipedia content and provide a response using Groq's API.
+5. **Enter your query** when prompted. The system will fetch relevant data from the Wikipedia content and provide a response using Groq's API.
 
 ---
 
