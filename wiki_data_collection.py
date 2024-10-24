@@ -108,7 +108,7 @@ topics = [
     "Coral Reefs", "Forest Conservation", "Renewable Resources",
     "Hydropower", "Wind Energy", "Solar Energy"
 ]
-print(len(topics))
-# Loop through and save content for each topic
-for topic in topics:
-    wiki_docs(topic)
+# print(len(topics))
+# # Loop through and save content for each topic
+# for topic in topics:
+#     wiki_docs(topic)

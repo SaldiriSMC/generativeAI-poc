@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gen AI Chat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-section {
+            margin-bottom: 20px;
+        }
+
+        .message-label {
+            font-weight: bold;
+        }
+
+        .response-section {
+            background-color: #e9f7e9;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 20px;
+        {
+        % if not response %
+        } display: none;
+        {
+        % endif %
+        }
+        }
+
+        .submit-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<h1>Gen AI Chat</h1>
+
+<div class="chat-container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="message-section">
+            <label for="message" class="message-label">Enter your message:</label><br>
+            <textarea id="message" name="message" rows="4" style="width: 100%;"
+                      placeholder="Type your message here..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    {% if response %}
+    <div class="response-section" id="response-section">
+        <h3>AI Response:</h3>
+        <p id="response-text">{{ response }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

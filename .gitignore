@@ -4801,7 +4801,7 @@ sam.yaml
 
 ### Django template
 local_settings.py
-db.sqlite3
+gen_ai/db.sqlite3
 db.sqlite3-journal
 media
 
@@ -8772,7 +8772,7 @@ config.wyam.hash
 # SQLite files
 *.sqlite.db*
 
-#ignore umbraco data/views/settings
+#ignore umbraco data/views.py/settings
 **/umbraco/
 
 #include default location for modelsbuilder output
