@@ -36,7 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_email_verification',
+    'accounts'
 ]
+
+AUTH_USER_MODEL = "accounts.User"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -110,9 +114,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'static/'  # URL prefix for static files
+STATICFILES_DIRS = [BASE_DIR / 'static']  # Directories for project-level static files
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Directory where static files are collected in production
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media files (user-uploaded files) configuration
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'alvi11225@gmail.com'
+EMAIL_HOST_PASSWORD = 'mxeu wqpw yrzy ahdm'
+
+LOGOUT_REDIRECT_URL = '/'  # Redirect to the homepage after logout.html
+

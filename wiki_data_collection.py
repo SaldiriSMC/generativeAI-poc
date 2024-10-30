@@ -1,42 +1,50 @@
 import os
 
-import wikipedia
-
 # Create a folder to store text files
 os.makedirs("wikipedia_documents_data", exist_ok=True)
+
+import wikipedia
 
 
 def wiki_docs(name):
     """
-    Get documents from Wikipedia
+    Get documents from Wikipedia and save to a file
     """
-    try:
-        print(f'Topic Name: {name}')
-        abc = wikipedia.WikipediaPage(name)
-    except:
+    print(f'Topic Name: {name}')
+    page = None  # Variable to hold the Wikipedia page object
+
+    # List of variations to attempt
+    variations = [
+        name,  # Original name
+        name.lower(),  # Lowercase name
+        name.split(" ")[0],  # First word of name
+        name.split(" ")[0].lower(),  # Lowercase first word
+        f'All pages with titles containing {name.split(" ")[0].lower()}',  # Title containing first word
+        f"{name.split(' ')[0]} (TV series)"  # Append "(TV series)" to the first word
+    ]
+
+    # Attempt to fetch Wikipedia page for each variation
+    for variation in variations:
         try:
-            try:
-                try:
-                    try:
-                        abc = wikipedia.WikipediaPage(name.lower())
-                    except:
-                        abc = wikipedia.WikipediaPage(name.split(" ")[0])
-                except:
-                    abc = wikipedia.WikipediaPage((name.split(" ")[0]).lower())
-            except:
-                abc = wikipedia.WikipediaPage('All pages with titles containing ' + name.split(" ")[0].lower())
-        except:
-            abc = wikipedia.WikipediaPage(name.split(" ")[0] + ' (TV series)')
-    try:
-        abc = abc.content
-        if abc:
-            filename = f"wikipedia_documents_data/{name.replace(' ', '_')}.txt"
-            with open(filename, 'w', encoding='utf-8') as f:
-                f.write(abc)
-        else:
-            print(f"Page '{name}' does not exist.")
-    except Exception as e:
-        print(f"Error: {e}")
+            page = wikipedia.WikipediaPage(variation)
+            break
+        except Exception:
+            continue
+
+    # Check if page was found and proceed to save
+    if page:
+        try:
+            content = page.content
+            if content:
+                filename = f"wikipedia_documents_data/{name.replace(' ', '_')}.txt"
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(content)
+            else:
+                print(f"Page '{name}' does not exist.")
+        except Exception as e:
+            print(f"Error writing to file: {e}")
+    else:
+        print(f"Unable to find a Wikipedia page for '{name}' after multiple attempts.")
 
 
 # Example: List of relevant pages to collect

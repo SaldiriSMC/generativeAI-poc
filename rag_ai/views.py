@@ -1,7 +1,10 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
+
 from vect_db import user_chat_ai
 
 
+@login_required
 def gen_ai_chat(request):
     """
     View for handling chat message and returning AI response.
@@ -14,5 +17,4 @@ def gen_ai_chat(request):
         message = request.POST.get('message')
         gen_ai_response = user_chat_ai(message)
         response = f"AI Response to your message: {gen_ai_response}"
-
     return render(request, 'ai_chat.html', {'response': response})
