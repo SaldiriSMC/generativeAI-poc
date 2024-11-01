@@ -1,4 +1,3 @@
-import codecs
 import os
 import time
 
@@ -20,7 +19,7 @@ database_name = os.getenv("PINECONE_INDEX_NAME")
 pinecone_index = pc.Index(database_name)
 
 
-def vec_db_data_transfer():
+def vec_db_data_transfer(file_name, file_content):
     # If database is not available than create it
     if database_name not in pc.list_indexes().names():
         pc.create_index(
@@ -38,13 +37,18 @@ def vec_db_data_transfer():
 
     # Convert product data into proper array for later to convert them to vector data,
     # in this for id is the filename and text is the content of the file
-    data = []
+    data = [
+        {
+            'id': file_name,
+            'text': file_content,
+        }
+    ]
 
-    for filename in os.listdir(directory_path):
-        file_path = os.path.join(directory_path, filename)
-        with codecs.open(file_path, 'r', encoding='utf-8') as f:
-            text = f.read()
-            data.append({'id': filename, 'text': text})
+    # for filename in os.listdir(directory_path):
+    # file_path = os.path.join(directory_path, filename)
+    # with codecs.open(file_path, 'r', encoding='utf-8') as f:
+    #     text = f.read()
+    #     data.append({'id': filename, 'text': text})
 
     # Convert data into embeddings
     embeddings = pc.inference.embed(
@@ -71,6 +75,8 @@ def vec_db_data_transfer():
         vectors=vectors,
         namespace="ns1"
     )
+
+    return True
 
 
 def user_chat_ai(user_query):
@@ -145,3 +151,4 @@ def user_chat_ai(user_query):
 # user_message = str(input('Write your question here: '))
 # ai_response = user_chat_ai(user_message)
 # print(ai_response)
+# vec_db_data_transfer()

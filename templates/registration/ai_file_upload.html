@@ -1,24 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}Update Password{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
 <div class="container">
     <!-- Title section -->
     <div class="title">Login</div>
-    <div class="content">
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-            </div>
-            {% endfor %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
         </div>
-        {% endif %}
-
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="content">
         <!-- Registration form -->
-        <form action="{% url 'update_password' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'ai_doc_upload' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="user-details">
                 <!-- Loop through form fields dynamically -->
@@ -32,9 +31,10 @@
                 </div>
                 {% endfor %}
             </div>
+            <p>Do not have an account? <a href="{% url 'register' %}">Click here to Register</a></p>
             <!-- Submit button -->
             <div class="button">
-                <input type="submit" value="Update Password">
+                <input type="submit" value="Login">
             </div>
         </form>
     </div>

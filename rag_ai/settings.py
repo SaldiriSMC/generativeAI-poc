@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_email_verification',
+    'rest_framework',
+    'drf_yasg',
     'accounts'
 ]
 
@@ -100,6 +102,24 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',  # Optional
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',  # Set to AllowAny for open endpoints
+    ),
+}
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'Basic': {
+            'type': 'basic'
+        }
+    }
+}
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -136,4 +156,3 @@ EMAIL_HOST_USER = 'alvi11225@gmail.com'
 EMAIL_HOST_PASSWORD = 'mxeu wqpw yrzy ahdm'
 
 LOGOUT_REDIRECT_URL = '/'  # Redirect to the homepage after logout.html
-

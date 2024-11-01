@@ -6,7 +6,7 @@ from django.db import models
 
 class User(AbstractUser):
     profile_image = models.ImageField(upload_to='profiles/', blank=True, null=True)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.username

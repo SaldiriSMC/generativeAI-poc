@@ -81,3 +81,7 @@ class PasswordUpdateForm(forms.Form):
             self.add_error('password1', e)
 
         return cleaned_data
+
+
+class AIDocsUploaderForm(forms.Form):
+    docs_file = forms.FileField(required=True)

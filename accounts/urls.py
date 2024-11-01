@@ -3,6 +3,7 @@ from django.urls import path
 
 import rag_ai.views
 from accounts import views
+from accounts.views import LoginViewAPI, RegisterAPIView, UpdateUserProfileAPI, PasswordUpdateAPIView, UserAIChatView
 
 urlpatterns = [
     # Account management URLs
@@ -13,6 +14,7 @@ urlpatterns = [
     path('profile/', rag_ai.views.gen_ai_chat, name='gen_ai_chat'),
     path('user-account-update/', views.user_update, name='user_account_update'),
     path('update-password/', views.update_password, name='update_password'),
+    path('ai-docs-upload/', views.gen_ai_chat_docs_upload, name='ai_doc_upload'),
 
     # Password reset URLs
     path('password-reset/', auth_views.PasswordResetView.as_view(
@@ -23,4 +25,9 @@ urlpatterns = [
         template_name='registration/password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(
         template_name='registration/password_reset_complete.html'), name='password_reset_complete'),
+    path('api-login/', LoginViewAPI.as_view(), name='api_login'),
+    path('register-api/', RegisterAPIView.as_view(), name='register_api'),
+    path('update-profile/', UpdateUserProfileAPI.as_view(), name='update_profile'),
+    path('api/password/update/', PasswordUpdateAPIView.as_view(), name='password-update-api'),
+    path('api/ai-chat/', UserAIChatView.as_view(), name='api-ai-chat'),
 ]
