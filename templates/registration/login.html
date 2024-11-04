@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 
 {% block title %}Login{% endblock %}
 
@@ -19,7 +19,7 @@
         <!-- Registration form -->
         <form action="{% url 'login' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="user-details">
+            <div class="user-details" style="margin-bottom: 0">
                 <!-- Loop through form fields dynamically -->
                 {% for field in form %}
                 <div class="input-box">
@@ -30,10 +30,13 @@
                     {% endif %}
                 </div>
                 {% endfor %}
+                <a style="margin-left: auto; margin-bottom: 0" href="{% url 'password_reset' %}">Forgot Password?</a>
             </div>
-            <p>Do not have an account? <a href="{% url 'register' %}">Click here to Register</a></p>
             <!-- Submit button -->
-            <div class="button">
+
+            <div class="button" style="margin-top: 0">
+                <p style="margin-top: 0">Do not have an account? <a href="{% url 'register' %}">Click here to
+                    Register</a></p>
                 <input type="submit" value="Login">
             </div>
         </form>

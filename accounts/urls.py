@@ -15,6 +15,11 @@ urlpatterns = [
     path('user-account-update/', views.user_update, name='user_account_update'),
     path('update-password/', views.update_password, name='update_password'),
     path('ai-docs-upload/', views.gen_ai_chat_docs_upload, name='ai_doc_upload'),
+    path('model-creds-add/', views.groq_pinecone_apis_add, name='model_creds_add'),
+    path('model-creds-update/<int:pk>/', views.groq_pinecone_apis_update, name='model_creds_update'),
+    path('model-update-env/<int:pk>/', views.update_key_on_env_variable, name='model_update_env'),
+    path('api-model-list/', views.ai_api_keys_model_list, name='api_model_list'),
+    path('api-model-list-update/', views.ai_api_keys_model_list_update, name='api_model_list_update'),
 
     # Password reset URLs
     path('password-reset/', auth_views.PasswordResetView.as_view(

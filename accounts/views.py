@@ -10,10 +10,12 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from accounts.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, PasswordUpdateForm, AIDocsUploaderForm
+from accounts.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, PasswordUpdateForm, AIDocsUploaderForm, \
+    UserAICredsForm
+from accounts.models import UserAICreds
 from accounts.serializers import LoginSerializer, UserSerializer, UserRegisterSerializer, UserUpdateSerializer, \
     PasswordUpdateSerializer, UserQuerySerializer
-from vect_db import user_chat_ai, vec_db_data_transfer
+from vect_db import user_chat_ai, vec_db_data_transfer, api_keys_gorq_pinecone
 
 
 # Register view
@@ -115,12 +117,10 @@ def update_password(request):
     return render(request, 'registration/update_password.html', {'form': form})
 
 
+@login_required
 def user_logout(request):
     return render(request, 'registration/logout.html')
 
-
-# form.cleaned_data['docs_file'].read()
-# form.cleaned_data['docs_file'].name
 
 @login_required
 def gen_ai_chat_docs_upload(request):
@@ -137,10 +137,12 @@ def gen_ai_chat_docs_upload(request):
 
             # Validate the file based on extension, size, and MIME type
             if file_name.endswith('.txt') and file.size <= 12 * 1024 and file_type == 'text/plain':
-                data_send_to_db = vec_db_data_transfer(file_name, file_content)
+                decoded_text = file_content.decode('utf-8')
+                pc, database_name, pinecone_index = api_keys_gorq_pinecone()
+                data_send_to_db = vec_db_data_transfer(file_name, decoded_text, pc, database_name, pinecone_index)
                 if data_send_to_db:
                     messages.success(request, 'Your document has been successfully uploaded.')
-                    return redirect('aiai_doc_upload')
+                    return redirect('ai_doc_upload')
                 messages.error(request, 'There was an issue uploading your document.')
                 return redirect('ai_doc_upload')
             else:
@@ -152,6 +154,70 @@ def gen_ai_chat_docs_upload(request):
 
     form = AIDocsUploaderForm()
     return render(request, 'registration/ai_file_upload.html', {'form': form})
+
+
+@login_required
+def groq_pinecone_apis_add(request):
+    if request.method == 'POST':
+        form = UserAICredsForm(request.POST)
+        if form.is_valid():
+            add_ai_keys = UserAICreds(
+                user=request.user,
+                name_keys_object=form.cleaned_data['name_keys_object'],
+                pinecone_api_key=form.cleaned_data['pinecone_api_key'],
+                pinecone_index_name=form.cleaned_data['pinecone_index_name'],
+                groq_api_key=form.cleaned_data['groq_api_key'],
+            )
+            add_ai_keys.save()
+            messages.success(request, 'Your AI key has been added.')
+            return redirect('model_creds_add')
+        messages.success(request, 'Kindly resolve the errors below.')
+        return redirect('model_creds_add')
+    form = UserAICredsForm()
+    return render(request, 'registration/user_ai_model_add.html', {'form': form})
+
+
+@login_required
+def ai_api_keys_model_list(request):
+    user_api_models = UserAICreds.objects.filter(user=request.user)
+    return render(request, 'registration/ai_api_keys_model_list.html',
+                  {'user_api_models': user_api_models})
+
+
+@login_required
+def ai_api_keys_model_list_update(request):
+    user_api_models_update = UserAICreds.objects.filter(user=request.user)
+    return render(request, 'registration/ai_api_keys_model_list_update.html',
+                  {'user_api_models_update': user_api_models_update})
+
+
+@login_required
+def groq_pinecone_apis_update(request, pk):
+    api_model_update_object = UserAICreds.objects.get(pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = UserAICredsForm(request.POST)
+        if form.is_valid():
+            api_model_update_object.user = request.user
+            api_model_update_object.name_keys_object = form.cleaned_data['name_keys_object']
+            api_model_update_object.pinecone_api_key = form.cleaned_data['pinecone_api_key']
+            api_model_update_object.pinecone_index_name = form.cleaned_data['pinecone_index_name']
+            api_model_update_object.groq_api_key = form.cleaned_data['groq_api_key']
+            api_model_update_object.save()
+            messages.success(request, 'Your AI key has been updated.')
+            return redirect('model_creds_update', pk=api_model_update_object.pk)
+        messages.error(request, 'Please correct the errors below.')
+        return redirect('model_creds_update', pk=api_model_update_object.pk)
+    form = UserAICredsForm(instance=api_model_update_object)
+    return render(request, 'registration/user_ai_model_update.html',
+                  {'form': form, 'object': api_model_update_object.id})
+
+
+@login_required
+def update_key_on_env_variable(request, pk):
+    UserAICreds.objects.filter(user=request.user).update(is_active=False)
+    UserAICreds.objects.filter(pk=pk).update(is_active=True)
+    messages.success(request, 'Model API Keys Updated')
+    return redirect('gen_ai_chat')
 
 
 class LoginViewAPI(APIView):
@@ -288,6 +354,14 @@ class UserAIChatView(APIView):
         serializer = UserQuerySerializer(data=request.data)
         if serializer.is_valid():
             message = serializer.validated_data['user_query']
-            gen_ai_response = user_chat_ai(message)
+            if request.user.ai_creds:
+                api_keys = request.user.ai_creds.filter(is_active=True).first()
+                pc, database_name, pinecone_index, client = api_keys_gorq_pinecone(
+                    api_keys.pinecone_api_key,
+                    api_keys.pinecone_index_name,
+                    api_keys.groq_api_key)
+            else:
+                pc, database_name, pinecone_index, client = api_keys_gorq_pinecone()
+            gen_ai_response = user_chat_ai(message, pc, pinecone_index, client)
             response = f"AI Response to your message: {gen_ai_response}"
             return Response({"message": response}, status=status.HTTP_200_OK)

@@ -1,67 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gen AI Chat</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f4;
-        }
+{% extends "base.html" %}
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
+{% block title %}Gen AI Chat{% endblock %}
 
-        .chat-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f4f4f4;
+    }
 
-        .message-section {
-            margin-bottom: 20px;
-        }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
 
-        .message-label {
-            font-weight: bold;
-        }
+    .chat-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .response-section {
-            background-color: #e9f7e9;
-            padding: 10px;
-            border-radius: 8px;
-            margin-top: 20px;
-        {
-        % if not response %
-        } display: none;
-        {
-        % endif %
-        }
-        }
+    .message-section {
+        margin-bottom: 20px;
+    }
 
-        .submit-btn {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 16px;
-        }
+    .message-label {
+        font-weight: bold;
+    }
 
-        .submit-btn:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
+    .response-section {
+        background-color: #e9f7e9;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 20px;
+    {
+    % if not response %
+    } display: none;
+    {
+    % endif %
+    }
+    }
+
+    .submit-btn {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    .submit-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+<!--</head>-->
+<!--<body>-->
 <h1>Gen AI Chat</h1>
 
 <div class="chat-container">
@@ -84,6 +83,7 @@
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
     </form>
+    <p style="margin-top: 10px">Wants to upload document to AI? <a href="{% url 'ai_doc_upload' %}">Click here to upload document</a></p>
 
     {% if response %}
     <div class="response-section" id="response-section">
@@ -93,5 +93,4 @@
     {% endif %}
 </div>
 
-</body>
-</html>
+{% endblock %}

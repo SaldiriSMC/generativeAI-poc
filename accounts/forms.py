@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 
-from accounts.models import User
+from accounts.models import User, UserAICreds
 
 
 class UserRegisterForm(UserCreationForm):
@@ -85,3 +85,9 @@ class PasswordUpdateForm(forms.Form):
 
 class AIDocsUploaderForm(forms.Form):
     docs_file = forms.FileField(required=True)
+
+
+class UserAICredsForm(forms.ModelForm):
+    class Meta:
+        model = UserAICreds
+        fields = ['name_keys_object', 'pinecone_api_key', 'pinecone_index_name', 'groq_api_key']

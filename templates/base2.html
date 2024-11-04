@@ -16,18 +16,7 @@
 
 <!-- Main Content Block -->
 <main class="container mt-4">
-    <a class="btn btn-primary" href="{% url 'gen_ai_chat' %}">AI Chart</a>
-    <a class="btn btn-primary" href="{% url 'user_account_update' %}">Update Profile Info</a>
-    <a class="btn btn-primary" href="{% url 'model_creds_add' %}">Manage AI model API keys</a>
-
-    <br>
-    <br>
     {% block content %}{% endblock %}
-    <br>
-    <form method="post" action="{% url 'logout' %}">
-        {% csrf_token %}
-        <button class="btn btn-primary" type="submit">Logout</button>
-    </form>
 </main>
 
 <!-- Footer -->

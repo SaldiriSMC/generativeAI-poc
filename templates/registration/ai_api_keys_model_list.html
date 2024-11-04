@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}AI API Keys{% endblock %}
+
+{% block content %}
+<div class="container" style="width: 100%; margin: 0 auto;">
+    <!-- Title section -->
+    <div class="title" style="font-size: 24px; font-weight: bold; text-align: left; margin-bottom: 20px;">
+        Add AI API Keys
+    </div>
+    <div class="content">
+        {% if messages %}
+        <div class="messages" style="margin-bottom: 15px;">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}"
+                 style="padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 5px;">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <table style="width: 100%; border-collapse: collapse;">
+            <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 8px; border: 1px solid #ddd;">User Name</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">API Key Object Name</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Pinecone API Key</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Pinecone Index Name</th>
+                <th style="padding: 8px; border: 1px solid #ddd;">Groq API Key</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for field in user_api_models %}
+            <tr>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.user.first_name }}">
+                    {{ field.user.first_name|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.name_keys_object }}">
+                    <a href="{% url 'model_update_env' field.id %}" style="color: #007bff; text-decoration: none;">
+                        {{ field.name_keys_object|truncatechars:10 }}
+                    </a>
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.pinecone_api_key }}">
+                    {{ field.pinecone_api_key|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.pinecone_index_name }}">
+                    {{ field.pinecone_index_name|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.groq_api_key }}">
+                    {{ field.groq_api_key|truncatechars:10 }}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

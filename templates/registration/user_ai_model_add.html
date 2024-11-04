@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Update Password{% endblock %}
+{% block title %}AI API Keys{% endblock %}
 
 {% block content %}
 <div class="container">
     <!-- Title section -->
-    <div class="title">Update Password</div>
+    <div class="title">Add AI API Keys</div>
     <div class="content">
         {% if messages %}
         <div class="messages">
@@ -18,7 +18,7 @@
         {% endif %}
 
         <!-- Registration form -->
-        <form action="{% url 'update_password' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'model_creds_add' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="user-details">
                 <!-- Loop through form fields dynamically -->
@@ -34,9 +34,11 @@
             </div>
             <!-- Submit button -->
             <div class="button">
-                <input type="submit" value="Update Password">
+                <input type="submit" value="Add AI API Keys">
             </div>
         </form>
     </div>
+    <a href="{% url 'api_model_list_update' %}">Update AI API Keys</a>
+    <a style="margin-left: 285px" href="{% url 'api_model_list' %}">Select APIs Model</a>
 </div>
 {% endblock %}

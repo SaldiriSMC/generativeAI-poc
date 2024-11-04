@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Register{% endblock %}
+{% block title %}User Info Update{% endblock %}
 
 {% block content %}
 <div class="container">
     <!-- Title section -->
-    <div class="title">Registration</div>
+    <div class="title">Update Profile Info</div>
     <div class="content">
         {% if messages %}
         <div class="messages">
@@ -34,9 +34,10 @@
             </div>
             <!-- Submit button -->
             <div class="button">
-                <input type="submit" value="Register">
+                <input type="submit" value="Update">
             </div>
         </form>
     </div>
+    <a href="{% url 'update_password' %}">Change Password</a>
 </div>
 {% endblock %}

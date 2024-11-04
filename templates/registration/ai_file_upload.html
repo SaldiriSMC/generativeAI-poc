@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Login{% endblock %}
+{% block title %}AI Document Upload{% endblock %}
 
 {% block content %}
 <div class="container">
     <!-- Title section -->
-    <div class="title">Login</div>
+    <div class="title">AI Document Upload</div>
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
@@ -31,10 +31,10 @@
                 </div>
                 {% endfor %}
             </div>
-            <p>Do not have an account? <a href="{% url 'register' %}">Click here to Register</a></p>
+            <p>Wants to chat with AI? <a href="{% url 'gen_ai_chat' %}">Click here to chat with AI.</a></p>
             <!-- Submit button -->
             <div class="button">
-                <input type="submit" value="Login">
+                <input type="submit" value="Send Document">
             </div>
         </form>
     </div>

@@ -1,3 +1,4 @@
+# import codecs
 import os
 import time
 
@@ -7,79 +8,106 @@ from pinecone import Pinecone, ServerlessSpec
 
 load_dotenv()
 
-# Initiate Pinecone Database
-pc = Pinecone(
-    api_key=os.getenv("PINECONE_API_KEY")
-)
 
-# Vector Database Name
-database_name = os.getenv("PINECONE_INDEX_NAME")
-
-# connect to vector database
-pinecone_index = pc.Index(database_name)
-
-
-def vec_db_data_transfer(file_name, file_content):
-    # If database is not available than create it
-    if database_name not in pc.list_indexes().names():
-        pc.create_index(
-            name=database_name,
-            dimension=1024,
-            metric='euclidean',
-            spec=ServerlessSpec(
-                cloud='aws',
-                region='us-east-1'
-            )
+def api_keys_gorq_pinecone(pinecone_key=None, pinecone_index_name=None, groq_api_key=None):
+    # Initiate Pinecone Database
+    if pinecone_key is None:
+        pc = Pinecone(
+            api_key=os.getenv("PINECONE_API_KEY")
+        )
+    else:
+        pc = Pinecone(
+            api_key=str(pinecone_key)
         )
 
-    # Directory path to you data files
-    directory_path = 'wikipedia_documents_data'
+    # Vector Database Name
+    if pinecone_index_name is None:
+        database_name = os.getenv("PINECONE_INDEX_NAME")
+    else:
+        database_name = str(pinecone_index_name)
 
-    # Convert product data into proper array for later to convert them to vector data,
-    # in this for id is the filename and text is the content of the file
-    data = [
-        {
-            'id': file_name,
-            'text': file_content,
-        }
-    ]
+    # connect to vector database
+    pinecone_index = pc.Index(database_name)
 
-    # for filename in os.listdir(directory_path):
-    # file_path = os.path.join(directory_path, filename)
-    # with codecs.open(file_path, 'r', encoding='utf-8') as f:
-    #     text = f.read()
-    #     data.append({'id': filename, 'text': text})
+    # initial Groq connection
+    if groq_api_key is None:
+        client = Groq(
+            api_key=os.getenv('GROQ_API_KEY'),
+        )
+    else:
+        client = Groq(
+            api_key=str(groq_api_key)
+        )
 
-    # Convert data into embeddings
-    embeddings = pc.inference.embed(
-        model="multilingual-e5-large",
-        inputs=[d['text'] for d in data],
-        parameters={"input_type": "passage", "truncate": "END"}
-    )
-
-    # Wait for the index to be ready
-    while not pc.describe_index(database_name).status['ready']:
-        time.sleep(1)
-
-    # Format id - Filename, values - vector data, and metadat - metadata from file to send to vector database
-    vectors = []
-    for d, e in zip(data, embeddings):
-        vectors.append({
-            "id": d['id'],
-            "values": e['values'],
-            "metadata": {'text': d['text']}
-        })
-
-    # Pass data to vector database
-    pinecone_index.upsert(
-        vectors=vectors,
-        namespace="ns1"
-    )
-
-    return True
+    return pc, database_name, pinecone_index, client
 
 
-def user_chat_ai(user_query):
+def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_name=None, pinecone_index=None):
+    try:
+        # If database is not available than create it
+        if database_name not in pc.list_indexes().names():
+            pc.create_index(
+                name=database_name,
+                dimension=1024,
+                metric='euclidean',
+                spec=ServerlessSpec(
+                    cloud='aws',
+                    region='us-east-1'
+                )
+            )
+
+        # Directory path to you data files
+        # directory_path = 'wikipedia_documents_data'
+
+        # Convert product data into proper array for later to convert them to vector data,
+        # in this for id is the filename and text is the content of the file
+        data = [
+            {
+                'id': file_name,
+                'text': file_content,
+            }
+        ]
+
+        # for filename in os.listdir(directory_path):
+        #     if filename == '2023_Cricket_World_Cup.txt':
+        #         file_path = os.path.join(directory_path, filename)
+        #         with codecs.open(file_path, 'r', encoding='utf-8') as f:
+        #             text = f.read()
+        #             data.append({'id': filename, 'text': text})
+
+        # Convert data into embeddings
+        embeddings = pc.inference.embed(
+            model="multilingual-e5-large",
+            inputs=[d['text'] for d in data],
+            parameters={"input_type": "passage", "truncate": "END"}
+        )
+
+        # Wait for the index to be ready
+        while not pc.describe_index(database_name).status['ready']:
+            time.sleep(1)
+
+        # Format id - Filename, values - vector data, and metadat - metadata from file to send to vector database
+        vectors = []
+        for d, e in zip(data, embeddings):
+            vectors.append({
+                "id": d['id'],
+                "values": e['values'],
+                "metadata": {'text': d['text']}
+            })
+
+        # Pass data to vector database
+        pinecone_index.upsert(
+            vectors=vectors,
+            namespace="ns1"
+        )
+
+        return True
+
+    except Exception as e:
+        return False
+
+
+def user_chat_ai(user_query, pc, pinecone_index, client):
     """
 
     :param user_query:
@@ -98,7 +126,7 @@ def user_chat_ai(user_query):
     results = pinecone_index.query(
         namespace="ns1",
         vector=embedding[0].values,
-        top_k=3,
+        top_k=2,
         include_values=False,
         include_metadata=True
     )
@@ -115,11 +143,6 @@ def user_chat_ai(user_query):
     - Utilize the context provided for accurate and specific information.
     Context: {context}
     """
-
-    # initial Groq connection
-    client = Groq(
-        api_key=os.getenv('GROQ_API_KEY'),
-    )
 
     # Add Prompt to user query
     user_query_with_instruction = (
