@@ -15,8 +15,8 @@ def gen_ai_chat(request):
 
     if request.method == 'POST':
         message = request.POST.get('message')
-        if request.user.ai_creds:
-            api_keys = request.user.ai_creds.filter(is_active=True).first()
+        api_keys = request.user.ai_creds.filter(is_active=True).first()
+        if api_keys:
             pc, database_name, pinecone_index, client = api_keys_gorq_pinecone(
                 api_keys.pinecone_api_key,
                 api_keys.pinecone_index_name,

@@ -32,6 +32,28 @@
             </thead>
             <tbody>
             {% for field in user_api_models_update %}
+            {% if field.is_active == True %}
+
+            <tr style="background-color: #79C87AFF;">
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.user.first_name }}">
+                    {{ field.user.first_name|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.name_keys_object }}">
+                    <a href="{% url 'model_creds_update' field.id %}" style="color: #007bff; text-decoration: none;">
+                        {{ field.name_keys_object|truncatechars:10 }}
+                    </a>
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.pinecone_api_key }}">
+                    {{ field.pinecone_api_key|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.pinecone_index_name }}">
+                    {{ field.pinecone_index_name|truncatechars:10 }}
+                </td>
+                <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.groq_api_key }}">
+                    {{ field.groq_api_key|truncatechars:10 }}
+                </td>
+            </tr>
+            {% else %}
             <tr>
                 <td style="padding: 8px; border: 1px solid #ddd;" title="{{ field.user.first_name }}">
                     {{ field.user.first_name|truncatechars:10 }}
@@ -51,6 +73,7 @@
                     {{ field.groq_api_key|truncatechars:10 }}
                 </td>
             </tr>
+            {% endif %}
             {% endfor %}
             </tbody>
         </table>

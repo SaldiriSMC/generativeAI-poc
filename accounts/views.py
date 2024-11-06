@@ -1,7 +1,9 @@
 import magic
+import six
 from django.contrib import auth, messages
 from django.contrib.auth import update_session_auth_hash, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
 from django.shortcuts import render, redirect
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
@@ -138,7 +140,14 @@ def gen_ai_chat_docs_upload(request):
             # Validate the file based on extension, size, and MIME type
             if file_name.endswith('.txt') and file.size <= 12 * 1024 and file_type == 'text/plain':
                 decoded_text = file_content.decode('utf-8')
-                pc, database_name, pinecone_index = api_keys_gorq_pinecone()
+                api_keys = request.user.ai_creds.filter(is_active=True).first()
+                if api_keys:
+                    pc, database_name, pinecone_index, client = api_keys_gorq_pinecone(
+                        api_keys.pinecone_api_key,
+                        api_keys.pinecone_index_name,
+                        api_keys.groq_api_key)
+                else:
+                    pc, database_name, pinecone_index, client = api_keys_gorq_pinecone()
                 data_send_to_db = vec_db_data_transfer(file_name, decoded_text, pc, database_name, pinecone_index)
                 if data_send_to_db:
                     messages.success(request, 'Your document has been successfully uploaded.')
