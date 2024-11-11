@@ -20,6 +20,7 @@ urlpatterns = [
     path('model-update-env/<int:pk>/', views.update_key_on_env_variable, name='model_update_env'),
     path('api-model-list/', views.ai_api_keys_model_list, name='api_model_list'),
     path('api-model-list-update/', views.ai_api_keys_model_list_update, name='api_model_list_update'),
+    path('activate/<str:uidb64>/<str:token>/', views.activate, name='activate'),
 
     # Password reset URLs
     path('password-reset/', auth_views.PasswordResetView.as_view(
