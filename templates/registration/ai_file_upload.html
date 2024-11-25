@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}AI Document Upload{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Title section -->
+    <div class="title">AI Document Upload</div>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="content">
+        <!-- Registration form -->
+        <form action="{% url 'ai_doc_upload' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="user-details">
+                <!-- Loop through form fields dynamically -->
+                {% for field in form %}
+                <div class="input-box">
+                    <span class="details">{{ field.label }}</span>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="error">{{ field.errors|striptags }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <p>Wants to chat with AI? <a href="{% url 'gen_ai_chat' %}">Click here to chat with AI.</a></p>
+            <!-- Submit button -->
+            <div class="button">
+                <input type="submit" value="Send Document">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}AI API Keys{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Title section -->
+    <div class="title">Add AI API Keys</div>
+    <div class="content">
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Registration form -->
+        <form action="{% url 'model_creds_add' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="user-details">
+                <!-- Loop through form fields dynamically -->
+                {% for field in form %}
+                <div class="input-box">
+                    <span class="details">{{ field.label }}</span>
+                    {{ field }}
+                    {% if field.errors %}
+                    <div class="error">{{ field.errors|striptags }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            <!-- Submit button -->
+            <div class="button">
+                <input type="submit" value="Add AI API Keys">
+            </div>
+        </form>
+    </div>
+    <a href="{% url 'api_model_list_update' %}">Update AI API Keys</a>
+    <a style="margin-left: 285px" href="{% url 'api_model_list' %}">Select APIs Model</a>
+</div>
+{% endblock %}
