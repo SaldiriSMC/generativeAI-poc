@@ -1,105 +1,94 @@
-# import codecs
 import os
 import time
-
+import magic
 from dotenv import load_dotenv
-from groq import Groq
 from pinecone import Pinecone, ServerlessSpec
+from groq import Groq
 
 load_dotenv()
 
-
-def api_keys_gorq_pinecone(pinecone_key=None, pinecone_index_name=None, groq_api_key=None):
-    # Initiate Pinecone Database
-    if pinecone_key is None:
-        pc = Pinecone(
-            api_key=os.getenv("PINECONE_API_KEY")
-        )
-    else:
-        pc = Pinecone(
-            api_key=str(pinecone_key)
-        )
-
-    # Vector Database Name
-    if pinecone_index_name is None:
-        database_name = os.getenv("PINECONE_INDEX_NAME")
-    else:
-        database_name = str(pinecone_index_name)
-
-    # connect to vector database
-    pinecone_index = pc.Index(database_name)
-
-    # initial Groq connection
-    if groq_api_key is None:
-        client = Groq(
-            api_key=os.getenv('GROQ_API_KEY'),
-        )
-    else:
-        client = Groq(
-            api_key=str(groq_api_key)
-        )
-
-    return pc, database_name, pinecone_index, client
-
-
-def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_name=None, pinecone_index=None):
+def api_keys_gorq_pinecone(pinecone_api_key, pinecone_index_name, groq_api_key):
     try:
-        # If database is not available than create it
-        if database_name not in pc.list_indexes().names():
+        pc = Pinecone(api_key=str(pinecone_api_key))
+        
+        database_name = str(pinecone_index_name)
+        existing_indexes = [index['name'] for index in pc.list_indexes()]
+        
+        if database_name not in existing_indexes:
             pc.create_index(
                 name=database_name,
                 dimension=1024,
                 metric='euclidean',
-                spec=ServerlessSpec(
-                    cloud='aws',
-                    region='us-east-1'
-                )
+                spec=ServerlessSpec(cloud='aws', region='us-east-1')
             )
+        else:
+            print(f"[INFO] Index '{database_name}' already exists.")
+        
+        # Ensure index is ready
+        while not pc.describe_index(database_name).status['ready']:
+            time.sleep(2)
 
-        # Directory path to you data files
-        # directory_path = 'wikipedia_documents_data'
+        pinecone_index = pc.Index(database_name)
+        client = Groq(api_key=str(groq_api_key))
+        
+        return pc, database_name, pinecone_index, client
 
-        # Convert product data into proper array for later to convert them to vector data,
-        # in this for id is the filename and text is the content of the file
-        data = [
-            {
-                'id': file_name,
-                'text': file_content,
-            }
-        ]
+    except Exception as e:
+        return None, None, None, None
 
-        # for filename in os.listdir(directory_path):
-        #     if filename == '2023_Cricket_World_Cup.txt':
-        #         file_path = os.path.join(directory_path, filename)
-        #         with codecs.open(file_path, 'r', encoding='utf-8') as f:
-        #             text = f.read()
-        #             data.append({'id': filename, 'text': text})
 
-        # Convert data into embeddings
+def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_name=None, pinecone_index=None):
+    try:
+        if not file_name or not file_content:
+            return False
+
+
+        # Check if the database exists in Pinecone
+        existing_indexes = [index['name'] for index in pc.list_indexes()]
+        if database_name not in existing_indexes:
+            pc.create_index(
+                name=database_name,
+                dimension=1024,
+                metric='euclidean',
+                spec=ServerlessSpec(cloud='aws', region='us-east-1')
+            )
+        else:
+            print(f"[INFO] Pinecone index '{database_name}' exists.")
+
+        # Ensure index is ready
+        while not pc.describe_index(database_name).status['ready']:
+            time.sleep(2)
+
+        # Validate file encoding
+        if isinstance(file_content, bytes):
+            try:
+                file_content = file_content.decode('utf-8')
+            except UnicodeDecodeError:
+                return False
+
+        # Generate embeddings
         embeddings = pc.inference.embed(
             model="multilingual-e5-large",
-            inputs=[d['text'] for d in data],
+            inputs=[file_content],
             parameters={"input_type": "passage", "truncate": "END"}
         )
 
-        # Wait for the index to be ready
-        while not pc.describe_index(database_name).status['ready']:
-            time.sleep(1)
+        if not embeddings or 'values' not in embeddings[0]:
+            return False
 
-        # Format id - Filename, values - vector data, and metadat - metadata from file to send to vector database
-        vectors = []
-        for d, e in zip(data, embeddings):
-            vectors.append({
-                "id": d['id'],
-                "values": e['values'],
-                "metadata": {'text': d['text']}
-            })
+        # Format vectors
+        vectors = [{
+            "id": file_name,
+            "values": embeddings[0]['values'],
+            "metadata": {
+                'text': file_content,
+                'title': os.path.basename(file_name),
+                'type': magic.from_buffer(file_content.encode(), mime=True),
+                'upload_date': time.strftime('%Y-%m-%d')
+            }
+        }]
 
-        # Pass data to vector database
-        pinecone_index.upsert(
-            vectors=vectors,
-            namespace="ns1"
-        )
+        response = pinecone_index.upsert(vectors=vectors, namespace="ns1")
 
         return True
 
@@ -107,71 +96,58 @@ def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_na
         return False
 
 
-def user_chat_ai(user_query, pc, pinecone_index, client):
-    """
 
-    :param user_query:
-    :return:
-    """
-    # Convert user query into vector format
+def user_chat_ai(user_query, pc, pinecone_index, client):
+    """ Query Pinecone and generate AI response. """
+
+    # Convert user query into a vector format
     embedding = pc.inference.embed(
         model="multilingual-e5-large",
         inputs=[user_query],
-        parameters={
-            "input_type": "query"
-        }
+        parameters={"input_type": "query"}
     )
 
-    # Query vector database on the base of user input vector
+    # Query Pinecone to find matching documents
     results = pinecone_index.query(
-        namespace="ns1",
-        vector=embedding[0].values,
-        top_k=2,
+        namespace="ns1",  # Ensure you're using the right namespace
+        vector=embedding[0]['values'],
+        top_k=3,  # Increase top_k to get more results
         include_values=False,
         include_metadata=True
     )
 
-    # Vector database returned results on the base of user query
+    if 'matches' not in results or len(results['matches']) == 0:
+        print("[WARNING] No matching results found in Pinecone!")
+        return "No relevant information found in the database."
+
+    # Extract matched results
     matched_info = ' '.join(item['metadata']['text'] for item in results['matches'])
 
-    # system prompt to provide answers on the base of returned results of database
-    context = f"Information: {matched_info}"
+    # If there are no matches, return an error message
+    if not matched_info:
+        return "I couldn't find any relevant information in my database."
+
+    # Generate AI response using Groq API
     sys_prompt = f"""
     Instructions:
-    - You are a knowledgeable assistant. Only provide data based on your knowledge in this role.
-    - Be helpful and answer questions concisely. If you don't know the answer, say 'I don't know'
-    - Utilize the context provided for accurate and specific information.
-    Context: {context}
+    - You are an AI assistant. Answer questions only using the given context.
+    - If the context is empty, say 'I don't know the answer'.
+    Context: {matched_info}
     """
 
-    # Add Prompt to user query
-    user_query_with_instruction = (
-            "Important Note: Only provide data from the role 'system'. "
-            "Your response should only contain exact words and sentences from the system role content. "
-            "Now, answer this: " + user_query
-    )
+    user_prompt = f"Important Note: Only respond based on the provided context.\nUser: {user_query}"
 
-    # Chat with groq API on the base of our text file
-    chat_completion = client.chat.completions.create(
-        messages=[
-            {
-                "role": "system",  # Role of the system message
-                "content": sys_prompt,  # System prompt content
-            },
-            {
-                "role": "user",  # Role of the user
-                "content": user_query_with_instruction,  # User prompt input
-            }
-        ],
-        model="llama3-8b-8192",  # Specify the model name
-    )
+    try:
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": sys_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            model="llama3-8b-8192"
+        )
 
-    # Print the response content
-    return chat_completion.choices[0].message.content
-    # return chat_completion
+        ai_response = chat_completion.choices[0].message.content
+        return ai_response
 
-# # User Question
-# user_message = str(input('Write your question here: '))
-# ai_response = user_chat_ai(user_message)
-# print(ai_response)
-# vec_db_data_transfer()
+    except Exception as e:
+        return "There was an error processing your request."

@@ -37,12 +37,7 @@
         padding: 10px;
         border-radius: 8px;
         margin-top: 20px;
-    {
-    % if not response %
-    } display: none;
-    {
-    % endif %
-    }
+        display: {% if response %} block {% else %} none {% endif %}; /* Fix display logic */
     }
 
     .submit-btn {
@@ -59,8 +54,7 @@
         background-color: #0056b3;
     }
 </style>
-<!--</head>-->
-<!--<body>-->
+
 <h1>Gen AI Chat</h1>
 
 <div class="chat-container">
@@ -83,7 +77,8 @@
         </div>
         <button type="submit" class="submit-btn">Send Message</button>
     </form>
-    <p style="margin-top: 10px">Wants to upload document to AI? <a href="{% url 'ai_doc_upload' %}">Click here to upload document</a></p>
+
+    <p style="margin-top: 10px">Want to upload a document to AI? <a href="{% url 'ai_doc_upload' %}">Click here to upload</a></p>
 
     {% if response %}
     <div class="response-section" id="response-section">
