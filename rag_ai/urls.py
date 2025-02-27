@@ -22,7 +22,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 
-from .views import gen_ai_chat, my_uploads
+from .views import gen_ai_chat, my_uploads, get_pinecone_stats
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -37,6 +37,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', gen_ai_chat, name='gen_ai_chat'),
+    path('api/pinecone-stats/', get_pinecone_stats, name='get_pinecone_stats'),
     path('my-uploads/', my_uploads, name='my_uploads'),
     path('accounts/', include('accounts.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

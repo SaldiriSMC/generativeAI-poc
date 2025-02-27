@@ -1,91 +1,531 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Gen AI Chat{% endblock %}
 
 {% block content %}
 <style>
     body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: white;
+        font-family: 'Segoe UI', Arial, sans-serif;
     }
 
-    h1 {
-        text-align: center;
-        color: #333;
+    .chat-layout {
+        display: flex;
+        height: 100vh;
     }
 
-    .chat-container {
-        max-width: 600px;
-        margin: 0 auto;
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .chat-area {
+        flex: 1;
         padding: 20px;
-        background-color: white;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .model-selector {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+    }
+    .model-btn {
+        padding: 8px 16px;
+        background: white;
+        border: 1px solid #e5e5e5;
         border-radius: 8px;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #333;
+        transition: all 0.2s;
+        font-size: 14px;
+    }
+    .model-btn:hover {
+        background-color: #f5f5f5;
+        border-color: #d0d0d0;
+    }
+    .chat-messages {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
     }
 
-    .message-section {
-        margin-bottom: 20px;
+    .welcome-screen {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 
-    .message-label {
-        font-weight: bold;
+    .welcome-text {
+        font-size: clamp(24px, 5vw, 36px);
+        color: #333;
+        margin-bottom: 40px;
+        padding: 0 20px;
     }
 
-    .response-section {
-        background-color: #e9f7e9;
-        padding: 10px;
+    .suggestions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 12px;
+        max-width: 600px;
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .suggestion-btn {
+        padding: 16px;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #333;
+        transition: all 0.2s;
+    }
+
+    .suggestion-btn:hover {
+        background-color: #f5f5f5;
+        border-color: #d0d0d0;
+    }
+
+    .message {
+        padding: 20px;
+        margin: 10px;
+        max-width: 800px;
+        width: calc(100% - 40px);
+        align-self: center;
+        box-sizing: border-box;
+    }
+
+    .user-message {
+        background-color: #f7f7f8;
         border-radius: 8px;
-        margin-top: 20px;
-        display: {% if response %} block {% else %} none {% endif %}; /* Fix display logic */
     }
 
-    .submit-btn {
-        background-color: #007BFF;
+    .ai-message {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .input-container {
+        border-top: 1px solid #e5e5e5;
+        padding: 15px;
+        background: white;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .input-wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .message-input {
+        width: 100%;
+        padding: 16px 60px 16px 16px;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        resize: none;
+        font-size: 16px;
+        line-height: 1.5;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        box-sizing: border-box;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .message-input:focus {
+        outline: none;
+        border-color: #0084ff;
+    }
+    .send-button {
+        position: absolute;
+        right: 12px;
+        top: 25%;
+        transform: translateY(-50%);
+        background: #0084ff;
         color: white;
         border: none;
-        padding: 10px 20px;
+        padding: 8px 16px;
+        border-radius: 8px;
         cursor: pointer;
-        border-radius: 5px;
-        font-size: 16px;
+        transition: background-color 0.2s;
+    }
+    .send-button:hover {
+        background-color: #0066cc;
+    }
+    .chat-tools {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid #f0f0f0;
+        flex-wrap: wrap;
+    }
+    .tool-button {
+        color: #666;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: all 0.2s;
+    }
+    .tool-button:hover {
+        background: #f5f5f5;
+    }
+    .thinking {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        font-style: italic;
+    }
+    .blink-dot {
+        width: 8px;
+        height: 8px;
+        background: #666;
+        border-radius: 50%;
+        animation: blink 1s infinite;
+    }
+    @keyframes blink {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
     }
 
-    .submit-btn:hover {
-        background-color: #0056b3;
+    /* Stats Panel Styles */
+    .stats-panel {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 12px;
+        padding: 16px;
+        width: 300px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+
+    .stats-panel.collapsed {
+        transform: translateY(calc(100% - 40px));
+    }
+
+    .stats-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+        cursor: pointer;
+    }
+
+    .stats-title {
+        font-weight: 600;
+        color: #333;
+        margin: 0;
+    }
+
+    .stats-toggle {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #666;
+        padding: 4px;
+    }
+
+    .stats-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .stat-item {
+        background: #f7f7f8;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .stat-label {
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 4px;
+    }
+
+    .stat-value {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
     }
 </style>
 
-<h1>Gen AI Chat</h1>
-
-<div class="chat-container">
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
+<div class="chat-layout">
+    <div class="main-content">
+        <div class="chat-area">
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-screen">
+                    <h1 class="welcome-text">What can I help with?</h1>
+                    <div class="suggestions">
+                        <button class="suggestion-btn">🎨 Create image</button>
+                        <button class="suggestion-btn">🎲 Surprise me</button>
+                        <button class="suggestion-btn">📝 Make a plan</button>
+                        <button class="suggestion-btn">💡 Brainstorm</button>
+                        <button class="suggestion-btn">✍️ Help me write</button>
+                        <button class="suggestion-btn">⋯ More</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-
-    <form method="POST">
-        {% csrf_token %}
-        <div class="message-section">
-            <label for="message" class="message-label">Enter your message:</label><br>
-            <textarea id="message" name="message" rows="4" style="width: 100%;"
-                      placeholder="Type your message here..."></textarea>
+        <div class="input-container">
+            <div class="input-wrapper">
+                <form method="POST" id="chat-form">
+                    {% csrf_token %}
+                    <textarea 
+                        class="message-input"
+                        id="message" 
+                        name="message" 
+                        placeholder="Ask anything..."
+                        rows="1"
+                    ></textarea>
+                    <button type="submit" class="send-button">Send</button>
+                </form>
+                <div class="chat-tools">
+                    <button class="tool-button">➕ New chat</button>
+                    <button class="tool-button">🔍 Search</button>
+                    <a href="{% url 'ai_doc_upload' %}" class="tool-button">📎 Upload a document to AI</a>
+                </div>
+            </div>
         </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-
-    <p style="margin-top: 10px">Want to upload a document to AI? <a href="{% url 'ai_doc_upload' %}">Click here to upload</a></p>
-
-    {% if response %}
-    <div class="response-section" id="response-section">
-        <h3>AI Response:</h3>
-        <p id="response-text">{{ response }}</p>
     </div>
-    {% endif %}
+
+    <!-- Stats Panel -->
+    <div class="stats-panel collapsed" id="stats-panel">
+        <div class="stats-header" id="stats-header">
+            <h3 class="stats-title">Usage Statistics</h3>
+            <button class="stats-toggle" id="stats-toggle">▼</button>
+        </div>
+        <div class="stats-content">
+            <div class="stat-item">
+                <div class="stat-label">Total Tokens</div>
+                <div class="stat-value" id="total-tokens">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Requests</div>
+                <div class="stat-value" id="total-requests">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Avg. Response Time</div>
+                <div class="stat-value" id="avg-response-time">0ms</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Est. Cost</div>
+                <div class="stat-value" id="total-cost">$0.00</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Total Vectors</div>
+                <div class="stat-value" id="total-vectors">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Index Fullness</div>
+                <div class="stat-value" id="index-fullness">0%</div>
+            </div>
+            <div id="namespace-details"></div>
+        </div>
+    </div>
 </div>
 
+<script>
+    const textarea = document.querySelector('.message-input');
+    const chatMessages = document.getElementById('chat-messages');
+    const form = document.getElementById('chat-form');
+
+    // Auto-resize textarea
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 200) + 'px';
+    });
+
+    let isFirstMessage = true;
+
+    function addMessage(content, isUser = false) {
+        if (isFirstMessage) {
+            const welcomeScreen = chatMessages.querySelector('.welcome-screen');
+            if (welcomeScreen) {
+                welcomeScreen.remove();
+            }
+            isFirstMessage = false;
+        }
+
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${isUser ? 'user-message' : 'ai-message'}`;
+        messageDiv.innerHTML = `<p>${content}</p>`;
+        chatMessages.appendChild(messageDiv);
+        messageDiv.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function addThinkingMessage() {
+        const thinkingDiv = document.createElement('div');
+        thinkingDiv.className = 'message ai-message';
+        thinkingDiv.innerHTML = `
+            <div class="thinking">
+                <div class="blink-dot"></div>
+            </div>
+        `;
+        chatMessages.appendChild(thinkingDiv);
+        thinkingDiv.scrollIntoView({ behavior: 'smooth' });
+        return thinkingDiv;
+    }
+
+    function typeMessage(element, text, index = 0) {
+        if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            setTimeout(() => typeMessage(element, text, index + 1), 20);
+        }
+    }
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(form);
+        const message = formData.get('message');
+        
+        if (!message.trim()) return;
+
+        addMessage(message, true);
+        
+        textarea.value = '';
+        textarea.style.height = 'auto';
+
+        const thinkingDiv = addThinkingMessage();
+        const startTime = Date.now();
+
+        try {
+            const response = await fetch(window.location.href, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+                },
+                credentials: 'same-origin'
+            });
+    
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const data = await response.json();
+            
+            thinkingDiv.remove();
+            
+            if (data.response) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message ai-message';
+                messageDiv.innerHTML = '<p></p>';
+                chatMessages.appendChild(messageDiv);
+                typeMessage(messageDiv.querySelector('p'), data.response);
+                messageDiv.scrollIntoView({ behavior: 'smooth' });
+    
+                // Update statistics
+                const responseTime = Date.now() - startTime;
+                updateStats({
+                    tokens: data.tokens || 0,
+                    cost: data.cost || 0,
+                    responseTime: responseTime
+                });
+            } else {
+                throw new Error('No response data received');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            thinkingDiv.innerHTML = '<p style="color: #dc3545">An error occurred. Please try again.</p>';
+        }
+    });
+
+    // Stats Panel Functionality
+    const statsPanel = document.getElementById('stats-panel');
+    const statsHeader = document.getElementById('stats-header');
+    const statsToggle = document.getElementById('stats-toggle');
+
+    let stats = {
+        totalTokens: 0,
+        totalRequests: 0,
+        totalResponseTime: 0,
+        totalCost: 0
+    };
+    statsHeader.addEventListener('click', () => {
+        statsPanel.classList.toggle('collapsed');
+        statsToggle.textContent = statsPanel.classList.contains('collapsed') ? '▼' : '▲';
+        if (!statsPanel.classList.contains('collapsed')) {
+            fetchPineconeStats();
+        }
+    });
+    async function fetchPineconeStats() {
+        try {
+            const response = await fetch("{% url 'get_pinecone_stats' %}");
+            if (!response.ok) throw new Error("Failed to fetch Pinecone stats");
+    
+            const stats = await response.json();
+            
+            // Update stats panel
+            document.getElementById("total-vectors").textContent = stats.total_vectors.toLocaleString();
+            document.getElementById("index-fullness").textContent = `${stats.index_fullness.toFixed(2)}%`;
+            
+            // Display namespace details if available
+            const namespaceContent = document.getElementById("namespace-details");
+            namespaceContent.innerHTML = "";
+            if (stats.namespaces) {
+                Object.entries(stats.namespaces).forEach(([namespace, data]) => {
+                    const nsItem = document.createElement("div");
+                    nsItem.className = "stat-item";
+                    nsItem.innerHTML = `
+                        <div class="stat-label">Namespace: ${namespace}</div>
+                        <div class="stat-value">${data?.vector_count || 0} vectors</div>
+                    `;
+                    namespaceContent.appendChild(nsItem);
+                });
+            }
+        } catch (error) {
+            console.error("Error fetching Pinecone stats:", error);
+        }
+    }
+    // Fetch Pinecone stats when the page loads
+    document.addEventListener("DOMContentLoaded", fetchPineconeStats);
+    function updateStats(newStats) {
+        stats.totalTokens += newStats.tokens;
+        stats.totalRequests += 1;
+        stats.totalResponseTime += newStats.responseTime;
+        stats.totalCost += newStats.cost;
+    
+        document.getElementById('total-tokens').textContent = stats.totalTokens.toLocaleString();
+        document.getElementById('total-requests').textContent = stats.totalRequests.toLocaleString();
+        document.getElementById('avg-response-time').textContent = 
+            `${Math.round(stats.totalResponseTime / stats.totalRequests)}ms`;
+        document.getElementById('total-cost').textContent = 
+            `$${(stats.totalCost).toFixed(4)}`;
+    }
+    // Initialize suggestion buttons
+    document.querySelectorAll('.suggestion-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            textarea.value = btn.textContent.replace(/^[^ ]+ /, '');
+            form.dispatchEvent(new Event('submit'));
+        });
+    });
+</script>
 {% endblock %}

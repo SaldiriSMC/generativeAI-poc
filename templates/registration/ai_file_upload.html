@@ -3,40 +3,129 @@
 {% block title %}AI Document Upload{% endblock %}
 
 {% block content %}
+<style>
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 24px;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 24px;
+        text-align: left;
+    }
+
+    .file-upload-wrapper {
+        position: relative;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        background: white;
+        cursor: pointer;
+        width: fit-content;
+    }
+
+    .file-upload-input {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .file-upload-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        padding: 8px 12px;
+        border-radius: 6px;
+        background: #4CAF50;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background 0.3s ease;
+    }
+
+    .file-upload-label:hover {
+        background: #388E3C;
+    }
+
+    .upload-icon {
+        font-size: 20px;
+    }
+
+    .file-name {
+        color: #666;
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .button input[type="submit"] {
+        background: linear-gradient(to right, #64b5f6, #9575cd);
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 24px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+        transition: opacity 0.2s;
+    }
+
+    .button input[type="submit"]:hover {
+        opacity: 0.9;
+    }
+</style>
+
 <div class="container">
-    <!-- Title section -->
     <div class="title">AI Document Upload</div>
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-            {{ message }}
-        </div>
+        <div class="alert alert-{{ message.tags }}">{{ message }}</div>
         {% endfor %}
     </div>
     {% endif %}
+    
     <div class="content">
-        <!-- Registration form -->
         <form action="{% url 'ai_doc_upload' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="user-details">
-                <!-- Loop through form fields dynamically -->
                 {% for field in form %}
-                <div class="input-box">
-                    <span class="details">{{ field.label }}</span>
-                    {{ field }}
-                    {% if field.errors %}
-                    <div class="error">{{ field.errors|striptags }}</div>
-                    {% endif %}
+                <div class="file-upload-wrapper">
+                    <label class="file-upload-label" for="file-input">
+                        <span class="upload-icon">📁</span> Choose File
+                    </label>
+                    <input type="file" id="file-input" class="file-upload-input" name="{{ field.name }}">
+                    <span class="file-name">No file selected</span>
                 </div>
+                {% if field.errors %}
+                <div class="error">{{ field.errors|striptags }}</div>
+                {% endif %}
                 {% endfor %}
             </div>
-            <p>Wants to chat with AI? <a href="{% url 'gen_ai_chat' %}">Click here to chat with AI.</a></p>
-            <!-- Submit button -->
+            <p>Want to chat with AI? <a href="{% url 'gen_ai_chat' %}">Click here to chat with AI.</a></p>
             <div class="button">
-                <input type="submit" value="Send Document">
+                <input type="submit" value="Upload Document">
             </div>
         </form>
     </div>
 </div>
+
+<script>
+    document.getElementById('file-input').addEventListener('change', function(e) {
+        const fileName = e.target.files[0] ? e.target.files[0].name : 'No file selected';
+        document.querySelector('.file-name').textContent = fileName;
+    });
+</script>
 {% endblock %}
