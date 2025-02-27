@@ -85,6 +85,27 @@
     .button input[type="submit"]:hover {
         opacity: 0.9;
     }
+
+    .checkbox-wrapper {
+        margin: 16px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .custom-checkbox {
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        accent-color: #4CAF50;
+    }
+
+    .checkbox-label {
+        color: #666;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
 </style>
 
 <div class="container">
@@ -113,6 +134,10 @@
                 <div class="error">{{ field.errors|striptags }}</div>
                 {% endif %}
                 {% endfor %}
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" id="share-doc" name="share_document" class="custom-checkbox">
+                <label for="share-doc" class="checkbox-label">Available to others</label>
             </div>
             <p>Want to chat with AI? <a href="{% url 'gen_ai_chat' %}">Click here to chat with AI.</a></p>
             <div class="button">
