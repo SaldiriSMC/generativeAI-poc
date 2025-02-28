@@ -74,29 +74,9 @@
             max-width: 800px;
             margin: auto;
         }
-        .model-indicator {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            background-color: #f8f9fa;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 0.9rem;
-            color: #6c757d;
-        }
-        .model-indicator i {
-            margin-right: 0.5rem;
-            color: #28a745;
-        }
     </style>
 </head>
 <body>
-    <!-- Model Indicator -->
-    <div class="model-indicator">
-        <i class="fas fa-robot"></i>
-        <span>Model: {{ current_model|default:"Default" }}</span>
-    </div>
 
     <!-- User Menu -->
     <div class="user-menu">

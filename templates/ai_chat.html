@@ -11,20 +11,77 @@
         height: 100vh;
         background: white;
         font-family: 'Segoe UI', Arial, sans-serif;
+        overflow: hidden;
     }
-
     .chat-layout {
         display: flex;
         height: 100vh;
+        width: 10vw;
+        margin: 0;
+        padding: 0;
     }
-
+    .chat-history {
+        width: 260px;
+        min-width: 260px;
+        background: #f7f7f8;
+        border-right: 1px solid #e5e5e5;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+    .history-section {
+        padding: 16px;
+    }
+    .history-section h2 {
+        font-size: 12px;
+        color: #666;
+        text-transform: uppercase;
+        margin: 0 0 12px 0;
+        letter-spacing: 0.5px;
+    }
+    .chat-item {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: transparent;
+    }
+    .chat-item:hover {
+        background: #eaeaeb;
+    }
+    .chat-item.active {
+        background: #e1e1e2;
+    }
+    .chat-title {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        margin-bottom: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .chat-preview {
+        font-size: 12px;
+        color: #666;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.4;
+    }
     .main-content {
         flex: 1;
         display: flex;
         flex-direction: column;
         height: 100vh;
+        margin-left: 100px;
+        width: calc(100vw - 260px);
     }
-
     .chat-area {
         flex: 1;
         padding: 20px;
@@ -71,6 +128,80 @@
         text-align: center;
     }
 
+    .document-selector {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .document-select {
+        padding: 8px 16px;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
+        min-width: 200px;
+        transition: all 0.2s;
+        position: relative;
+    }
+
+    .document-options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-top: 4px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+    }
+
+    .document-options.show {
+        display: block;
+    }
+
+    .document-warning {
+        padding: 8px 16px;
+        background-color: #fff3cd;
+        color: #856404;
+        font-size: 12px;
+        border-top: 1px solid #ffeeba;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .document-option {
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+    .document-option:hover {
+        background-color: #f5f5f5;
+    }
+
+    .document-option input[type="checkbox"] {
+        margin: 0;
+    }
+
+    .document-select:hover {
+        border-color: #0084ff;
+    }
+
+    .document-select:focus {
+        outline: none;
+        border-color: #0084ff;
+        box-shadow: 0 0 0 2px rgba(0,132,255,0.2);
+    }
     .welcome-text {
         font-size: clamp(24px, 5vw, 36px);
         color: #333;
@@ -280,9 +411,62 @@
 </style>
 
 <div class="chat-layout">
+    <div class="chat-history">
+        <div class="history-section">
+            <h2>Today</h2>
+            <div class="chat-item active">
+                <div class="chat-title">Image Generation Discussion</div>
+                <div class="chat-preview">Exploring different ways to generate creative images using AI...</div>
+            </div>
+            <div class="chat-item">
+                <div class="chat-title">Project Planning</div>
+                <div class="chat-preview">Breaking down the next quarter's objectives and milestones...</div>
+            </div>
+        </div>
+        <div class="history-section">
+            <h2>Yesterday</h2>
+            <div class="chat-item">
+                <div class="chat-title">Code Review Session</div>
+                <div class="chat-preview">Reviewing the new authentication implementation...</div>
+            </div>
+        </div>
+        <div class="history-section">
+            <h2>Previous 7 Days</h2>
+            <div class="chat-item">
+                <div class="chat-title">API Integration</div>
+                <div class="chat-preview">Discussing the best approach for integrating the new payment API...</div>
+            </div>
+            <div class="chat-item">
+                <div class="chat-title">Bug Investigation</div>
+                <div class="chat-preview">Analyzing the root cause of the performance issue...</div>
+            </div>
+        </div>
+    </div>
     <div class="main-content">
         <div class="chat-area">
             <div class="chat-messages" id="chat-messages">
+                <div class="document-selector">
+                    <div class="document-select" id="document-select">
+                        <div class="selected-text">Select documents to chat about...</div>
+                        <div class="document-options" id="document-options">
+                            <label class="document-option">
+                                <input type="checkbox" value="doc1" class="document-checkbox">
+                                Document 1
+                            </label>
+                            <label class="document-option">
+                                <input type="checkbox" value="doc2" class="document-checkbox">
+                                Document 2
+                            </label>
+                            <label class="document-option">
+                                <input type="checkbox" value="doc3" class="document-checkbox">
+                                Document 3
+                            </label>
+                            <div class="document-warning">
+                                Note: Selecting multiple documents may increase response time
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="welcome-screen">
                     <h1 class="welcome-text">What can I help with?</h1>
                     <div class="suggestions">
@@ -507,6 +691,36 @@
     }
     // Fetch Pinecone stats when the page loads
     document.addEventListener("DOMContentLoaded", fetchPineconeStats);
+
+    // Initialize document selector
+    const documentSelect = document.getElementById('document-select');
+    const documentOptions = document.getElementById('document-options');
+    const selectedText = documentSelect.querySelector('.selected-text');
+    const checkboxes = document.querySelectorAll('.document-checkbox');
+
+    documentSelect.addEventListener('click', (e) => {
+        documentOptions.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!documentSelect.contains(e.target)) {
+            documentOptions.classList.remove('show');
+        }
+    });
+
+    function updateSelectedText() {
+        const selected = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.parentElement.textContent.trim());
+        
+        selectedText.textContent = selected.length > 0
+            ? selected.join(', ')
+            : 'Select documents to chat about...';
+    }
+
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateSelectedText);
+    });
     function updateStats(newStats) {
         stats.totalTokens += newStats.tokens;
         stats.totalRequests += 1;
