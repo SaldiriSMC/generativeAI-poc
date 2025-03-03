@@ -35,3 +35,14 @@ class UserAICreds(BaseTimeStampedModel):
         if self.is_active:
             UserAICreds.objects.filter(user=self.user).update(is_active=False)
         super(UserAICreds, self).save(*args, **kwargs)
+
+
+class UserDocument(BaseTimeStampedModel):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'docs', blank=False, null= True)
+    document = models.FileField(upload_to = 'documents/')
+    pineconeDoc_id = models.CharField(max_length=255, blank=True, null=True,unique=True)
+    is_public=models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.document.name} ({'Public' if self.is_public else 'Private'})"
+    

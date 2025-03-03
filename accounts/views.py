@@ -196,6 +196,15 @@ def gen_ai_chat_docs_upload(request):
                     pc, database_name, pinecone_index, client = api_keys_gorq_pinecone()
                 data_send_to_db = vec_db_data_transfer(file_name, decoded_text, pc, database_name, pinecone_index)
                 if data_send_to_db:
+                    # Create UserDocument instance
+                    from accounts.models import UserDocument
+                    user_doc = UserDocument(
+                        user=request.user,
+                        document=file,
+                        pineconeDoc_id=data_send_to_db,
+                        is_public=request.POST.get('is_public') == 'on'
+                    )
+                    user_doc.save()
                     messages.success(request, 'Your document has been successfully uploaded.')
                     return redirect('ai_doc_upload')
                 messages.error(request, 'There was an issue uploading your document.')
