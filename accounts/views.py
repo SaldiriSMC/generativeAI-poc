@@ -1,5 +1,6 @@
 import magic
 import six
+from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.auth import update_session_auth_hash, login, get_user_model
 from django.contrib.auth.decorators import login_required
@@ -17,6 +18,7 @@ from rest_framework import status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from django.contrib.auth.views import LoginView
 
 from accounts.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, PasswordUpdateForm, AIDocsUploaderForm, \
     UserAICredsForm
@@ -32,6 +34,14 @@ class TokenGenerator(PasswordResetTokenGenerator):
 
 
 account_activation_token = TokenGenerator()
+
+
+class CustomLoginView(LoginView):
+    def get_success_url(self):
+        if not UserAICreds.objects.filter(user=self.request.user).exists():
+            messages.warning(self.request, "You must add at least one API key to proceed.")
+            return "/accounts/model-creds-add/"  # Change to your actual path
+        return "/accounts/profile/"  # Change to your actual path
 
 # Register view
 def register(request):

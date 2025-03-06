@@ -101,7 +101,8 @@ def my_uploads(request):
                     uploads.append({
                         'title': metadata.get('title', 'Untitled'),
                         'type': metadata.get('type', 'Document'),
-                        'upload_date': metadata.get('upload_date', datetime.now().strftime('%Y-%m-%d'))
+                        'upload_date': metadata.get('upload_date', datetime.now().strftime('%Y-%m-%d')),
+                        'uploaded_by': metadata.get('uploaded_by', request.user.username)
                     })
         
         return render(request, 'my_uploads.html', {'uploads': uploads})

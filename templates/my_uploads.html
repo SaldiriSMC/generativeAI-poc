@@ -38,6 +38,9 @@
         font-size: 14px;
         font-weight: 600;
         margin-bottom: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #eee;
+        color: #444;
     }
 
     .card-text {
@@ -50,8 +53,24 @@
     }
 </style>
 
+<style>
+    .list-view .row {
+        flex-direction: column;
+    }
+    .list-view .col-md-4 {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+    .list-view .card {
+        margin-bottom: 8px;
+    }
+</style>
+
 <div class="container">
-    <div class="title">My Document Uploads</div>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="title">My Document Uploads</div>
+        <i class="fas fa-list-ul toggle-view" style="cursor: pointer; font-size: 1.2rem;" title="Toggle view"></i>
+    </div>
 
     {% if error_message %}
         <div class="alert alert-danger">
@@ -66,10 +85,10 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title">{{ upload.title }}</h5>
+                                <h5 class="card-title">{{ upload.upload_date }}</h5> Added by: {{ upload.uploaded_by }}
                                 <div class="card-text">
-                                    <p><strong>Type:</strong> {{ upload.type }}</p>
-                                    <p><strong>Date:</strong> {{ upload.upload_date }}</p>
+                                    <p><strong>Title:</strong> {{ upload.title }}</p>
+                                    <p><strong>Description:</strong> Show a little text from document upto 100 chars</p>
                                 </div>
                             </div>
                         </div>
@@ -91,4 +110,13 @@
         <a href="{% url 'gen_ai_chat' %}" class="btn btn-outline-primary ms-2">Chat with AI</a>
     </div>
 </div>
+
+<script>
+    document.querySelector('.toggle-view').addEventListener('click', function() {
+        const container = document.querySelector('.uploads-container');
+        container.classList.toggle('list-view');
+        this.classList.toggle('fa-list-ul');
+        this.classList.toggle('fa-th-large');
+    });
+</script>
 {% endblock %}

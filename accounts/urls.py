@@ -3,14 +3,14 @@ from django.urls import path
 
 import rag_ai.views
 from accounts import views
-from accounts.views import LoginViewAPI, RegisterAPIView, UpdateUserProfileAPI, PasswordUpdateAPIView, UserAIChatView
+from accounts.views import LoginViewAPI, RegisterAPIView, UpdateUserProfileAPI, PasswordUpdateAPIView, UserAIChatView, CustomLoginView
 
 urlpatterns = [
     # Account management URLs
     path('register/', views.register, name='register'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),  # Optional logout.html URL
     path('user-logout/', views.user_logout, name='user-logout'),
-    path('login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+     path('login/', CustomLoginView.as_view(), name='login'),
     path('profile/', rag_ai.views.gen_ai_chat, name='gen_ai_chat'),
     path('user-account-update/', views.user_update, name='user_account_update'),
     path('update-password/', views.update_password, name='update_password'),
