@@ -40,7 +40,8 @@ class UserAICreds(BaseTimeStampedModel):
 class UserDocument(BaseTimeStampedModel):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = 'docs', blank=False, null= True)
     document = models.FileField(upload_to = 'documents/')
-    pineconeDoc_id = models.CharField(max_length=255, blank=True, null=True,unique=True)
+    description = models.TextField(blank=True,null=True)
+    pineconeDoc_id = models.CharField(max_length=255, blank=True, null=True,unique=False)
     is_public=models.BooleanField(default=False)
 
     def __str__(self):

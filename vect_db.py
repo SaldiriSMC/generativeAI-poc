@@ -42,7 +42,6 @@ def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_na
         if not file_name or not file_content:
             return False
 
-
         # Check if the database exists in Pinecone
         existing_indexes = [index['name'] for index in pc.list_indexes()]
         if database_name not in existing_indexes:
@@ -78,7 +77,7 @@ def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_na
 
         # Format vectors
         vectors = [{
-            "id": file_name,
+            "id": file_name,  # Use file_name as the unique ID
             "values": embeddings[0]['values'],
             "metadata": {
                 'text': file_content,
@@ -90,7 +89,7 @@ def vec_db_data_transfer(file_name=None, file_content=None, pc=None, database_na
 
         response = pinecone_index.upsert(vectors=vectors, namespace="ns1")
 
-        return True
+        return file_name
 
     except Exception as e:
         return False

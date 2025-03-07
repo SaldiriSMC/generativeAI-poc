@@ -85,10 +85,10 @@
                     <div class="col-md-4 mb-3">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title">{{ upload.upload_date }}</h5> Added by: {{ upload.uploaded_by }}
+                                <h5 class="card-title">{{ upload.title }}</h5>
                                 <div class="card-text">
-                                    <p><strong>Title:</strong> {{ upload.title }}</p>
                                     <p><strong>Description:</strong> Show a little text from document upto 100 chars</p>
+                                    <p class="mt-2 text-muted"><em>Uploaded by <strong>{{ upload.uploaded_by }}</strong> on {{ upload.upload_date }}</em></p>
                                 </div>
                             </div>
                         </div>
