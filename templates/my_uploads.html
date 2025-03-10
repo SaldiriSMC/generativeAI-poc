@@ -87,7 +87,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ upload.title }}</h5>
                                 <div class="card-text">
-                                    <p><strong>Description:</strong> Show a little text from document upto 100 chars</p>
+                                    <p><strong>Description:</strong> {{ upload.description|truncatechars:100 }}</p>
                                     <p class="mt-2 text-muted"><em>Uploaded by <strong>{{ upload.uploaded_by }}</strong> on {{ upload.upload_date }}</em></p>
                                 </div>
                             </div>

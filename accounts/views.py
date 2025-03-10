@@ -19,7 +19,7 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth.views import LoginView
-
+from .models import UserDocument
 from accounts.forms import UserRegisterForm, UserLoginForm, UserUpdateForm, PasswordUpdateForm, AIDocsUploaderForm, \
     UserAICredsForm
 from accounts.models import UserAICreds
@@ -180,6 +180,8 @@ def user_logout(request):
     return render(request, 'registration/logout.html')
 
 
+from django.shortcuts import get_object_or_404
+
 @login_required
 def gen_ai_chat_docs_upload(request):
     if request.method == 'POST':
@@ -193,7 +195,6 @@ def gen_ai_chat_docs_upload(request):
             mime = magic.Magic(mime=True)
             file_type = mime.from_buffer(file_content)
 
-            # Validate the file based on extension, size, and MIME type
             if file_name.endswith('.txt') and file.size <= 12 * 1024 and file_type == 'text/plain':
                 decoded_text = file_content.decode('utf-8')
                 api_keys = request.user.ai_creds.filter(is_active=True).first()
@@ -201,24 +202,39 @@ def gen_ai_chat_docs_upload(request):
                     pc, database_name, pinecone_index, client = api_keys_gorq_pinecone(
                         api_keys.pinecone_api_key,
                         api_keys.pinecone_index_name,
-                        api_keys.groq_api_key)
+                        api_keys.groq_api_key
+                    )
                 else:
                     pc, database_name, pinecone_index, client = api_keys_gorq_pinecone()
+
                 data_send_to_db = vec_db_data_transfer(file_name, decoded_text, pc, database_name, pinecone_index)
+                print(f"Generated PineconeDoc ID: {data_send_to_db}")
+
+
                 if data_send_to_db:
+                    # Check if the pineconeDoc_id already exists
+                    if UserDocument.objects.filter(pineconeDoc_id=data_send_to_db).exists():
+                        messages.error(request, "A document with this Pinecone ID already exists.")
+                        return redirect('ai_doc_upload')
+
+                    # Store first 100 characters in description
+                    description_text = decoded_text[:100]
+
                     # Create UserDocument instance
-                    from accounts.models import UserDocument
                     user_doc = UserDocument(
                         user=request.user,
                         document=file,
                         pineconeDoc_id=data_send_to_db,
+                        description=description_text,
                         is_public=request.POST.get('is_public') == 'on'
                     )
                     user_doc.save()
                     messages.success(request, 'Your document has been successfully uploaded.')
                     return redirect('ai_doc_upload')
+
                 messages.error(request, 'There was an issue uploading your document.')
                 return redirect('ai_doc_upload')
+
             else:
                 messages.error(request, 'Your file must be a .txt file, under 12 KB, and plain text.')
                 return redirect('ai_doc_upload')

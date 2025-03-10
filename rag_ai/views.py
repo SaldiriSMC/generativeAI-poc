@@ -71,7 +71,7 @@ def my_uploads(request):
     api_keys = request.user.ai_creds.filter(is_active=True).first()
     if not api_keys:
         return render(request, 'my_uploads.html', {
-            'error': 'No active API credentials found. Please add your API keys to access your uploads.'
+            'error_message': 'No active API credentials found. Please add your API keys to access your uploads.'
         })
     pc, database_name, pinecone_index, client = api_keys_gorq_pinecone(
         api_keys.pinecone_api_key,
@@ -98,9 +98,22 @@ def my_uploads(request):
             for match in query_response['matches']:
                 metadata = match.metadata
                 if metadata:
+                    # Get document ID from metadata
+                    doc_id = metadata.get('pineconeDoc_id')
+                    
+                    # Try to fetch description from database
+                    description = 'No description available'
+                    if doc_id:
+                        # Try to find the document in the database using pineconeDoc_id
+                        from accounts.models import UserDocument
+                        user_doc = UserDocument.objects.filter(pineconeDoc_id=doc_id).first()
+                        if user_doc and user_doc.description:
+                            description = user_doc.description
+                    
                     uploads.append({
                         'title': metadata.get('title', 'Untitled'),
                         'type': metadata.get('type', 'Document'),
+                        'description': description,  # Use description from database
                         'upload_date': metadata.get('upload_date', datetime.now().strftime('%Y-%m-%d')),
                         'uploaded_by': metadata.get('uploaded_by', request.user.username)
                     })
@@ -108,5 +121,5 @@ def my_uploads(request):
         return render(request, 'my_uploads.html', {'uploads': uploads})
     except Exception as e:
         return render(request, 'my_uploads.html', {
-            'error': f'Error fetching uploads: {str(e)}'
+            'error_message': f'Error fetching uploads: {str(e)}'
         })
